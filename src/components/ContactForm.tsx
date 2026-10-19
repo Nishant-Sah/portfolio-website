@@ -155,9 +155,7 @@ export default function ContactForm() {
           {status.kind === "sending" ? "Sending message..." : "Send message"}
         </button>
 
-        <span className="text-xs text-zinc-400">
-          Direct email: <a href={`mailto:${site.email}`} className="text-violet-300 underline hover:text-white">{site.email}</a>
-        </span>
+
       </div>
 
       {/* Feedback banner */}
