@@ -41,7 +41,7 @@ export const projects: Project[] = [
     description: "An advanced second-semester engineering project featuring multi-channel appliance switching, environment sensing, and a secure local web interface on ESP32.",
     detailedDescription: "Designed and implemented during the 2nd semester of Computer Engineering at Kathmandu University. This system transforms traditional home appliances into intelligent, remotely controllable devices without relying on third-party cloud servers. Built around the ESP32 microcontroller, it hosts a real-time web server with responsive asynchronous REST endpoints, relay switching circuitry with optoisolation, and multi-sensor telemetry for temperature, humidity, and fire safety.",
     tags: ["ESP32", "C++", "IoT", "Relays", "WebSockets", "2nd Sem"],
-    repo: "https://github.com/Nishant-Sah/Advanced-Home-Automation-System",
+    repo: "https://github.com/Nishant-Sah/Home_Automation_with_ESP32",
     features: [
       "Multi-channel optoisolated relay switching for high-voltage home appliances",
       "Asynchronous local web dashboard accessible from phones, tablets, and PCs",
