@@ -34,67 +34,46 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "advanced-home-automation-system",
-    title: "Advanced Home Automation System",
+    title: "Advanced Home Automation System using ESP32",
     category: "IoT & Embedded",
     semester: "2nd Semester Project",
     status: "Completed",
-    description: "An advanced second-semester engineering project featuring multi-channel appliance switching, environment sensing, and a secure local web interface on ESP32.",
-    detailedDescription: "Designed and implemented during the 2nd semester of Computer Engineering at Kathmandu University. This system transforms traditional home appliances into intelligent, remotely controllable devices without relying on third-party cloud servers. Built around the ESP32 microcontroller, it hosts a real-time web server with responsive asynchronous REST endpoints, relay switching circuitry with optoisolation, and multi-sensor telemetry for temperature, humidity, and fire safety.",
-    tags: ["ESP32", "C++", "IoT", "Relays", "WebSockets", "2nd Sem"],
+    description: "A fully local ESP32-based home automation system — control four appliances over Wi-Fi through a browser, with DHT22-driven automatic fan control and real-time LCD status feedback. No cloud, no app, no subscription.",
+    detailedDescription: "Designed and built during the 2nd semester of Computer Engineering at Kathmandu University. The ESP32 hosts an HTTP web server directly on the local Wi-Fi network, allowing any browser-connected device to toggle four relays and monitor appliance states in real time. A DHT22 sensor continuously reads temperature; when it crosses a configurable threshold, the fan relay switches on automatically without any user intervention. A 1602 I2C LCD mounted on the board displays live appliance status at a glance — no phone required. All control stays entirely on the local network with no dependence on third-party cloud services, external apps, or paid subscriptions.",
+    tags: ["ESP32", "C/C++", "IoT", "HTTP", "Wi-Fi", "I2C", "DHT22", "Relay", "LCD", "2nd Sem"],
     repo: "https://github.com/Nishant-Sah/Home_Automation_with_ESP32",
     features: [
-      "Multi-channel optoisolated relay switching for high-voltage home appliances",
-      "Asynchronous local web dashboard accessible from phones, tablets, and PCs",
-      "Real-time sensor telemetry with automatic overheat and fault trip thresholds",
-      "EEPROM state persistence to retain device states during power outages",
-      "Manual physical switch overrides with instantaneous software state synchronization"
+      "Web-based control of four appliances over Wi-Fi from any browser on the local network",
+      "DHT22 temperature sensor with configurable threshold for automatic fan relay switching",
+      "1602 I2C LCD displaying real-time appliance status without needing a phone or app",
+      "Fully local architecture — no cloud services, third-party apps, or subscriptions required",
+      "HTTP server hosted directly on the ESP32 serving a custom HTML/CSS control interface",
+      "I2C communication between ESP32 and LCD for clean, minimal wiring"
     ],
-    hardware: ["ESP32 Dev Module", "4-Channel 5V Relay Board", "DHT22 Temperature & Humidity Sensor", "MQ-2 Gas & Smoke Sensor", "Step-down Power Supply", "Optocouplers"],
-    software: ["ESP-IDF / Arduino C++", "Asynchronous WebServer", "HTML5/CSS3 Web UI", "JSON API"],
+    hardware: [
+      "ESP32 Dev Module (Wi-Fi + GPIO)",
+      "4-Channel 5V Relay Module (appliance switching)",
+      "DHT22 Temperature & Humidity Sensor",
+      "1602 I2C LCD Display",
+      "Power supply & connecting wires"
+    ],
+    software: ["Embedded C/C++ (Arduino Framework)", "HTML/CSS (web control interface)", "Wi-Fi (802.11 b/g/n)", "HTTP", "I2C protocol"],
     gallery: [
       {
-        title: "Relay & Controller Enclosure",
-        caption: "Custom wired ESP32 test bench with 4-channel optoisolated relay switching module."
+        title: "ESP32 Hardware Setup",
+        caption: "ESP32 wired to the 4-channel relay module, DHT22 sensor, and 1602 I2C LCD on a local test bench."
       },
       {
-        title: "Local Asynchronous Dashboard",
-        caption: "Responsive web interface served directly from the ESP32 flash memory for sub-millisecond appliance toggles."
+        title: "Browser Control Interface",
+        caption: "Custom HTML/CSS page served by the ESP32 — toggle four appliances from any browser on the local Wi-Fi network."
       },
       {
-        title: "Telemetry & Auto-Safety Logic",
-        caption: "Environmental sensor monitoring circuit for continuous gas, temperature, and current sensing."
+        title: "Auto Fan Control & LCD Feedback",
+        caption: "DHT22 triggers the fan relay when temperature exceeds the set threshold; the LCD shows live appliance states."
       }
     ]
   },
-  {
-    slug: "smart-home-monitoring-system",
-    title: "Smart Home Monitoring System",
-    category: "IoT",
-    semester: "Hardware & IoT",
-    status: "Completed",
-    description: "Home automation and monitoring on an ESP32 with sensors, relay modules and wireless control through an interactive custom dashboard.",
-    detailedDescription: "The Smart Home Monitoring System is a comprehensive IoT deployment engineered for connected residential safety and automation. It continuously monitors ambient environmental parameters, detects abnormal energy consumption and hazards (gas leaks, temperature spikes), and gives users full remote control over connected appliances with live feedback and alerts.",
-    tags: ["ESP32", "C++", "IoT", "Sensors", "Dashboard"],
-    repo: "https://github.com/Nishant-Sah/Smart-Home-Monitoring-System",
-    features: [
-      "Real-time sensor data streaming to custom monitoring web dashboard",
-      "Threshold-based automatic alerts for hazardous gas levels and thermal spikes",
-      "Wireless appliance switching with low-latency status confirmation",
-      "Clean modular C++ firmware architecture with watchdog timer protection"
-    ],
-    hardware: ["ESP32", "Relay Modules", "DHT11 Sensor", "MQ Gas Sensor", "OLED Display", "Buzzer Alert Unit"],
-    software: ["C++", "Arduino Framework", "HTTP REST API", "Chart.js Dashboard"],
-    gallery: [
-      {
-        title: "Circuit Breadboard Prototype",
-        caption: "Interfacing ESP32 with sensor array, status LEDs, and relay trigger channels."
-      },
-      {
-        title: "Real-time Monitoring Interface",
-        caption: "Custom graphical web dashboard displaying live sensor readings and device controls."
-      }
-    ]
-  },
+
   {
     slug: "robo-soccer-bot",
     title: "Robo Soccer Bot",
