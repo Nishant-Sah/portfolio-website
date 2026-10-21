@@ -25,41 +25,42 @@ export type ExperienceDetail = {
 
 export const experienceData: ExperienceDetail[] = [
   {
-    slug: "yantra-3-robotics-championship",
-    title: "1st Place Winner, Yantra 3.0 Robotics Championship",
+    slug: "yantra-3-project-demonstration-1st-place",
+    title: "1st Place Winner, Project Demonstration — Yantra 3.0",
     category: "Achievement",
-    organization: "Robotics Association of Nepal & Kathmandu University",
+    organization: "Robotics Association of Nepal & Yantra Committee",
     roleOrAward: "1st Place Winner (NPR 20,000 Cash Prize)",
     date: "2026",
     location: "Kathmandu, Nepal",
-    summary: "Secured first position and cash prize in the prestigious Yantra 3.0 robotics championship competing against top engineering institutions across Nepal.",
-    about: "Yantra is one of Nepal's premiere annual robotics symposiums and arena combat competitions. Nishant's robotics team designed, assembled, and calibrated a custom high-performance arena robot built for agility, aggressive torque delivery, and tactical maneuvering. Through intense knockout heats and high-pressure tactical showdowns, our build remained resilient and clinched the 1st place championship trophy and a cash prize of NPR 20,000.",
+    summary: "Won 1st place and NPR 20,000 cash prize in the national Project Demonstration competition with our group project: an offline voice-controlled smart automation system featuring master-client architecture, voice talk-back, and walking robotic motion.",
+    about: "In the Project Demonstration exhibition at Yantra 3.0, Nepal's premiere national robotics and innovation symposium, our engineering group showcased a distributed smart automation and interactive robotics system. Built with a decentralized master node and client node, the system allows users to control household appliances entirely through offline voice recognition — operating with zero reliance on cloud services or internet connectivity. For lifelike engagement, the robot talks back with audio confirmation and features synchronized physical motion, including left/right orientation and walking locomotion. The project earned 1st place among top engineering institutions across Nepal alongside a cash prize of NPR 20,000.",
     worksDone: [
-      "Engineered reinforced chassis and high-torque dual-drive powertrain from raw metal components",
-      "Calibrated real-time wireless 2.4GHz RF communication for zero-latency operator control",
-      "Conducted arena impact simulations and rapid field repairs under strict tournament timeouts",
-      "Strategized match offensive/defensive driving maneuvers during quarter, semi, and final rounds"
+      "Architected a decentralized master-client wireless network linking central voice processing to distributed appliance switching nodes",
+      "Implemented edge offline speech recognition to enable private, low-latency device control without internet dependency",
+      "Integrated two-way audio talk-back feedback confirming user instructions and reporting appliance status",
+      "Constructed mechanical linkages and servo/motor kinematics for coordinated left/right rotation and walking locomotion",
+      "Delivered live competitive demonstration rounds to technical judges and industry evaluators"
     ],
-    skillsGained: ["Robotics Hardware Architecture", "Arena Combat Kinematics", "Rapid Circuit Troubleshooting", "Competitive Team Leadership"],
+    skillsGained: ["Offline Voice Recognition", "Distributed Master-Client IoT", "Robotic Kinematics & Locomotion", "Embedded Systems", "Live Technical Demonstration"],
     certificate: {
-      title: "1st Place Championship Trophy & Award Certificate",
-      issuer: "Robotics Association of Nepal (RAN) & Yantra Committee",
+      title: "1st Place Award Certificate — Project Demonstration",
+      issuer: "Robotics Association of Nepal (RAN) & Yantra 3.0 Committee",
       award: "1st Place Winner · NPR 20,000 Cash Prize",
       date: "2026",
-      verificationNote: "Officially awarded for exceptional robot engineering and championship victory in the Yantra 3.0 Robotics Tournament."
+      verificationNote: "Officially awarded 1st place in the Project Demonstration competition at Yantra 3.0 for exceptional engineering in offline voice automation and interactive robotic motion."
     },
     gallery: [
       {
-        title: "Championship Trophy & Award Presentation",
-        caption: "Receiving the 1st Place Trophy and NPR 20,000 prize certificate on the main stage."
+        title: "1st Place Trophy & Award Presentation",
+        caption: "Receiving the 1st Place Trophy and NPR 20,000 cash prize certificate on the Yantra 3.0 main stage."
       },
       {
-        title: "Arena Combat Match In Progress",
-        caption: "Tactical positioning and rapid maneuvering during the intense championship final round."
+        title: "Master & Client Offline Voice Demo",
+        caption: "Live demonstration of offline voice recognition controlling client devices with real-time audio talk-back."
       },
       {
-        title: "Pit Crew & Robot Calibration",
-        caption: "Pre-match voltage testing, motor driver tuning, and battery swaps between tournament heats."
+        title: "Locomotion & Walking Mechanism",
+        caption: "Calibrating the interactive robotic node's left-right directional turning and walking locomotion."
       }
     ]
   },
@@ -67,12 +68,12 @@ export const experienceData: ExperienceDetail[] = [
     slug: "robo-soccer-semi-finalist",
     title: "Semi-Finalist, Robo Soccer Championship",
     category: "Achievement",
-    organization: "Kathmandu University Robotics Club & Regional Arenas",
-    roleOrAward: "Semi-Finalist Trophy",
+    organization: "Robotics Association of Nepal (Yantra 3.0)",
+    roleOrAward: "Semi-Finalist Recognition",
     date: "2026",
-    location: "Dhulikhel, Nepal",
-    summary: "Qualified through rigorous league stages to the semi-finals in the national Robo Soccer tournament with a custom low-profile ball-handling robot.",
-    about: "The Robo Soccer Championship puts speed, steering accuracy, and ball control to the test on a custom carpet pitch. Nishant designed an agile, low-ground-clearance differential drive bot outfitted with a front ball-retention scoop and sprint boost circuitry. The robot advanced through preliminary qualifiers and quarter-finals with clean sweep match scores, reaching the tournament semi-finals.",
+    location: "Kathmandu, Nepal",
+    summary: "Qualified through rigorous league stages to the semi-finals in the national Robo Soccer tournament at Yantra 3.0 with a custom low-profile ball-handling robot.",
+    about: "The Robo Soccer Championship at Yantra 3.0 puts speed, steering accuracy, and ball control to the test on a custom pitch. Nishant designed an agile, low-ground-clearance differential drive bot outfitted with a front ball-retention scoop and sprint boost circuitry. The robot advanced through preliminary qualifiers and quarter-finals with clean sweep match scores, reaching the tournament semi-finals.",
     worksDone: [
       "Tuned micro-gear motor torque curves using PWM to balance sprint speed with ball dribbling stability",
       "Constructed a high-traction rubber wheel setup for aggressive acceleration on tournament turf",
@@ -81,11 +82,11 @@ export const experienceData: ExperienceDetail[] = [
     ],
     skillsGained: ["High-speed RF Remote Control", "PWM Motor Control", "Mechanical Traction Optimization", "Tournament Strategy"],
     certificate: {
-      title: "Robo Soccer Semi-Finalist Certificate of Excellence",
-      issuer: "Kathmandu University Robotics Club (KURC)",
-      award: "Semi-Finalist Recognition",
+      title: "Robo Soccer Semi-Finalist Recognition",
+      issuer: "Robotics Association of Nepal (Yantra 3.0)",
+      award: "Semi-Finalist & Participation Certificate",
       date: "2026",
-      verificationNote: "Awarded in recognition of outstanding athletic robot performance and advancing to the semi-finals."
+      verificationNote: "Awarded with participation certificate, responsive ball control, and advancing to the semi-finals in the Robo Soccer tournament."
     },
     gallery: [
       {

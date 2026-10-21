@@ -17,6 +17,13 @@ body {
   color: #f4f4f7;
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+/* Crisp headings */
+h1, h2, h3 {
+  text-rendering: optimizeLegibility;
 }
 
 :focus-visible {
@@ -31,6 +38,17 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* Skip rendering offscreen sections until user scrolls to them — improves INP & TBT */
+.section-lazy {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* Promote animated elements to their own GPU layer to prevent layout jank */
+.will-animate {
+  will-change: transform, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -40,4 +58,9 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  /* Disable GPU hints when motion is reduced — not needed */
+  .will-animate {
+    will-change: auto;
+  }
 }
+

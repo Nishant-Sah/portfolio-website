@@ -13,7 +13,7 @@ export const experience = [
 ];
 
 export const achievements = [
-  "1st place, Yantra 3.0 robotics competition (NPR 20,000 prize)",
+  "1st place in Project Demonstration, Yantra 3.0 (NPR 20,000 prize)",
   "Semi-finalist, Robo Soccer competition",
   "Participated in TechX Kathmandu 2026",
   "Certificate of Appreciation, Mahashivaratri 2026 blood donation and community service with Nepal Scouts",

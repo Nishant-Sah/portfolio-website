@@ -12,6 +12,6 @@ export const site = {
   github: "https://github.com/Nishant-Sah",
   // TODO: put your resume in /public and set e.g. "/resume.pdf". Hidden while null.
   resume: null as string | null,
-  photo: "/images/profile.png",
+  photo: "/images/profile.webp",
   photoSize: { width: 1220, height: 1289 },
 };

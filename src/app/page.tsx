@@ -17,9 +17,21 @@ import { skillGroups } from "@/data/skills";
 import { experienceData } from "@/data/experience";
 import { useHeroIntro } from "@/context/HeroIntroContext";
 
+// Defined at module level so server and client evaluate the exact same reference
+const MINI_SLUGS = new Set([
+  "smart-blind-stick",
+  "u-turn-robot",
+  "lpg-gas-temperature-detection",
+  "smart-dustbin",
+  "mini-weather-monitoring-station",
+]);
+const featuredProjects = projects.filter((p) => !MINI_SLUGS.has(p.slug));
+const miniProjects = projects.filter((p) => MINI_SLUGS.has(p.slug));
+
 const section = "mx-auto max-w-6xl px-6 py-10 md:py-14";
 const h2 = "text-3xl font-semibold tracking-tight";
 const btn = "inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition";
+
 
 export default function Home() {
   const { isRevealed, registerContentContainer } = useHeroIntro();
@@ -155,9 +167,58 @@ export default function Home() {
               </p>
             </div>
             <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {projects.map((p) => (
+              {featuredProjects.map((p) => (
                 <li key={p.slug}>
                   <ProjectCard project={p} />
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Mini Projects Section */}
+          <section id="mini-projects" className={section}>
+            <div className="max-w-3xl">
+              <h2 className={h2}>Mini Projects</h2>
+              <p className="mt-2 text-base leading-relaxed text-zinc-300">
+                Smaller hands-on builds — sensor experiments, assistive tech, automation, and robotics exercises.
+              </p>
+            </div>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {miniProjects.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/projects/${p.slug}`}
+                    className="glass group flex h-full flex-col gap-3 rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-[0_8px_24px_rgba(129,117,255,0.14)]"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-sm font-semibold leading-snug text-white transition group-hover:text-violet-200">
+                        {p.title}
+                      </h3>
+                      <ArrowUpRight
+                        size={15}
+                        className="mt-0.5 shrink-0 text-zinc-500 transition group-hover:text-violet-300"
+                        aria-hidden
+                      />
+                    </div>
+                    <p className="text-xs leading-relaxed text-zinc-400 line-clamp-2">
+                      {p.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {p.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md border border-white/5 bg-white/[0.05] px-2 py-0.5 text-[11px] font-medium text-violet-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {p.repo && (
+                      <span className="mt-auto flex items-center gap-1 text-[11px] font-medium text-zinc-500 transition group-hover:text-violet-300">
+                        <Code size={11} aria-hidden /> GitHub
+                      </span>
+                    )}
+                  </Link>
                 </li>
               ))}
             </ul>

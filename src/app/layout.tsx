@@ -11,6 +11,7 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 const description = `${site.name} is a ${site.role.toLowerCase()} at ${site.university} building robotics, IoT and web projects.`;
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: site.name,
     type: "website",
+    images: [{ url: site.photo, width: site.photoSize.width, height: site.photoSize.height, alt: site.name }],
   },
 };
 
@@ -39,6 +41,20 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        {/* Preconnect to Google Fonts CDN to reduce DNS + TLS handshake time */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Preload LCP hero image — browser fetches before React renders */}
+        <link
+          rel="preload"
+          as="image"
+          href={site.photo}
+          fetchPriority="high"
+          type="image/webp"
+        />
+      </head>
       <body className={inter.className}>
         <HeroIntroProvider>
           <a

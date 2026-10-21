@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { site } from "@/data/site";
 import RatGame from "@/components/RatGame";
@@ -25,6 +25,9 @@ export default function PhotoFloat({
   const reduce = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
   const [gameActive, setGameActive] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const { state: introState, triggerReveal } = useHeroIntro();
   const isIntroIdle = introState === "idle";
@@ -147,7 +150,7 @@ export default function PhotoFloat({
             )}
 
             {/* Subtle mobile hint on tap for touch devices when revealed and not playing */}
-            {isIntroDone && enableGame && !gameActive && (
+            {mounted && isIntroDone && enableGame && !gameActive && (
               <div className="sm:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-center">
                 <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] text-pink-300">
                   <Gamepad2 size={12} /> Tap photo to play 🐭

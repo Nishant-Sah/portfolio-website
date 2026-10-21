@@ -75,21 +75,75 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "offline-voice-automation-system",
+    title: "Offline Voice Automation & Interactive Robotic Node",
+    category: "IoT & Robotics",
+    semester: "Group Innovation Project",
+    status: "Completed",
+    description: "1st Prize winner in Project Demonstration — an offline voice-controlled smart automation system built by our group with master-client nodes, voice talk-back, and directional walking motion.",
+    detailedDescription: "Developed as a group engineering project and awarded 1st Place in the Project Demonstration competition (NPR 20,000 Cash Prize). The project implements a smart home automation architecture using a master node and client node to control appliances entirely via voice commands offline — with zero reliance on cloud or internet. The system actively talks back with voice feedback to confirm user commands and features physical robotic interaction, including left/right head/body rotation and walking motion.",
+    tags: ["Offline Voice", "Master-Client", "Home Automation", "Robotics", "1st Prize", "Embedded C++", "IoT"],
+    certificate: {
+      title: "1st Prize Winner — Project Demonstration",
+      issuer: "Yantra 3.0 Robotics & Innovation Festival",
+      award: "1st Place (NPR 20,000 Cash Prize) — Project Demonstration",
+      date: "2026",
+      note: "Awarded 1st place in project demonstration for our group's offline voice-controlled master-client automation, two-way voice talk-back, and interactive walking motion."
+    },
+    features: [
+      "Master node and client node distributed network for multi-room appliance control",
+      "100% offline edge speech recognition — control devices by voice with zero internet or cloud dependence",
+      "Interactive voice talk-back audio feedback confirming commands and reporting live status",
+      "Synchronized physical robotic motion with left/right directional orientation and walking locomotion",
+      "Low-latency wireless node-to-node telemetry linking master voice controller to client modules",
+      "Multi-channel relay module for safe electrical switching of household loads"
+    ],
+    hardware: [
+      "Master Processing Controller Node",
+      "Offline Speech Recognition Hardware Unit",
+      "Wireless Client Node (ESP32/RF)",
+      "Multi-Channel Relay Module",
+      "Audio Amplifier & Speaker System (Voice Talk-Back)",
+      "Servo & Motor Kinematics Assembly (Walking & Left/Right Motion)"
+    ],
+    software: [
+      "Embedded C++",
+      "Offline Voice Command Processing Engine",
+      "Master-Client Wireless Communication Protocol",
+      "Audio Feedback & Voice Prompt Playback System",
+      "Kinematic Motor Control for Walking and Directional Motion"
+    ],
+    gallery: [
+      {
+        title: "Master & Client Node Setup",
+        caption: "Master controller with offline voice recognition communicating wirelessly with the client node to switch appliances."
+      },
+      {
+        title: "Voice Talk-Back & Motion Mechanism",
+        caption: "Integrated audio amplifier for voice responses and motorized walking/directional movement mechanism."
+      },
+      {
+        title: "1st Prize Project Demonstration Award",
+        caption: "Official 1st Prize recognition and NPR 20,000 award in the Project Demonstration competition."
+      }
+    ]
+  },
+
+  {
     slug: "robo-soccer-bot",
     title: "Robo Soccer Bot",
     category: "Robotics",
     semester: "Competition Robotics",
     status: "Completed",
     description: "A high-speed competition robot engineered for robo-soccer tournaments, tuned for agility, swift torque response, and competitive ball control.",
-    detailedDescription: "Engineered specifically for competitive robo-soccer arenas where agility, low ground clearance, and instant acceleration determine victory. Built using dual high-RPM planetary metal gear motors, heavy-duty motor drivers, custom chassis reinforcement, and low-latency wireless radio control. Reached the semi-finals and earned top honors in regional robotics championships.",
-    tags: ["Robotics", "Motor Drivers", "High Torque", "RF Control", "Yantra 3.0"],
-    repo: "https://github.com/Nishant-Sah/Robo-Soccer-Bot",
+    detailedDescription: "Engineered specifically for competitive robo-soccer arenas where agility, low ground clearance, and instant acceleration determine victory. Built using dual high-RPM planetary metal gear motors, heavy-duty motor drivers, custom chassis reinforcement, and low-latency wireless radio control. Advanced through tournament preliminary rounds and reached the semi-finals in competitive play.",
+    tags: ["Robotics", "Motor Drivers", "High Torque", "RF Control", "Competition"],
     certificate: {
-      title: "1st Place Winner & Semi-Finalist Recognition",
-      issuer: "Yantra 3.0 Robotics Competition & Robo Soccer Championships",
-      award: "1st Place (NPR 20,000 Cash Prize) & Robo Soccer Semi-Finalist",
+      title: "Robo Soccer Semi-Finalist Recognition",
+      issuer: "Robotics Association of Nepal (Yantra 3.0)",
+      award: "Semi-Finalist",
       date: "2026",
-      note: "Awarded for exceptional mechanical design, robot agility, and outstanding performance in competitive arena rounds."
+      note: "Awarded with participation certificate, responsive ball control, and advancing to the semi-finals in the Robo Soccer tournament."
     },
     features: [
       "Custom low-profile chassis with center-of-gravity optimization for anti-topple stability",
@@ -109,8 +163,8 @@ export const projects: Project[] = [
         caption: "Dual geared motor configuration configured for high-speed counter-rotations and sprint bursts."
       },
       {
-        title: "Competition Certificate & Award",
-        caption: "Official championship certificate and recognition for Yantra 3.0 robotics victory."
+        title: "Tournament Semi-Finalist Certificate",
+        caption: "Official participation certificate and semi-finalist recognition from Robotics Association of Nepal (Yantra 3.0)."
       }
     ]
   },
@@ -404,3 +458,4 @@ export const projects: Project[] = [
     ]
   }
 ];
+
