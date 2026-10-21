@@ -76,7 +76,26 @@ export default function SkillLogo({ name, className = "", size = 48 }: SkillLogo
     );
   }
 
-  // 3. TailwindCSS
+  // 3. JavaScript
+  if (norm.includes("javascript") || norm === "js") {
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 128 128"
+        className={className}
+        aria-label="JavaScript Logo"
+      >
+        <rect width="128" height="128" fill="#F7DF1E" rx="6" />
+        <path
+          fill="#323330"
+          d="M116 95.5c0 11.9-7 18-17.2 18-9.2 0-14.5-4.7-17.2-10.5l9.4-5.7c1.8 3.2 3.4 5.9 7.3 5.9 3.7 0 6.1-1.5 6.1-7.2V55.6h11.6v39.9zM76.4 94.2c0 13.8-8.1 20.1-19.9 20.1-10.7 0-16.9-5.5-20-13.7l9.4-5.5c2.5 4.1 5.7 7.1 11.4 7.1 4.8 0 7.8-2.4 7.8-5.9 0-4.1-3.1-5.6-8.4-7.9l-2.9-1.2C45.6 83.4 40 78.5 40 68.8c0-9.5 7.2-16.7 18.5-16.7 8 0 13.8 2.8 17.9 10.1l-9.1 5.8c-2.2-3.9-4.5-5.4-8.8-5.4-4 0-6.5 2.5-6.5 5.8 0 4.1 2.5 5.7 8.4 8.1l2.9 1.2c10.2 4.4 15.9 9 15.9 19.2-.2.1-.8.3-.8.3z"
+        />
+      </svg>
+    );
+  }
+
+  // 4. TailwindCSS
   if (norm.includes("tailwind")) {
     return (
       <svg

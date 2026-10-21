@@ -6,6 +6,7 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
     items: [
       { name: "C++", shortName: "C++" },
       { name: "C", shortName: "C" },
+      { name: "JavaScript", shortName: "JavaScript" },
       { name: "TailwindCSS", shortName: "Tailwindcss" },
       { name: "Data structures & algorithms", shortName: "DSA", note: "learning" },
       { name: "E-commerce website", shortName: "E-Commerce", note: "building" },

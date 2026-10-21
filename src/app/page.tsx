@@ -38,6 +38,7 @@ export default function Home() {
   const { isRevealed, registerContentContainer } = useHeroIntro();
   const portfolioContentRef = useRef<HTMLDivElement>(null);
   const [activeSkillCategory, setActiveSkillCategory] = useState<string>("All");
+  const [mounted, setMounted] = useState(false);
 
   const allSkills = skillGroups.flatMap((g) => g.items);
   const displayedSkills =
@@ -47,6 +48,7 @@ export default function Home() {
 
   useEffect(() => {
     registerContentContainer(portfolioContentRef.current);
+    setMounted(true);
   }, [registerContentContainer]);
 
   return (
@@ -243,52 +245,56 @@ export default function Home() {
                 Languages, frameworks, hardware architectures, and developer tooling I work with.
               </p>
 
-              {/* Category Filter Pills */}
-              <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-                {["All", ...skillGroups.map((g) => g.title)].map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveSkillCategory(cat)}
-                    className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 ${
-                      activeSkillCategory === cat
-                        ? "bg-violet-600 text-white shadow-[0_0_20px_rgba(124,58,237,0.45)] border border-violet-400/60"
-                        : "bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
+              {/* Category Filter Pills — client-only to avoid hydration mismatch */}
+              {mounted && (
+                <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+                  {["All", ...skillGroups.map((g) => g.title)].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveSkillCategory(cat)}
+                      className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 ${
+                        activeSkillCategory === cat
+                          ? "bg-violet-600 text-white shadow-[0_0_20px_rgba(124,58,237,0.45)] border border-violet-400/60"
+                          : "bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Open, Spacious Skill Grid matching reference design */}
-            <div className="flex flex-wrap justify-center items-start gap-x-8 sm:gap-x-12 md:gap-x-14 gap-y-12 max-w-5xl mx-auto py-6">
-              {displayedSkills.map((s) => (
-                <div
-                  key={s.name}
-                  className="group flex flex-col items-center justify-start text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-[120px]"
-                >
-                  <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center transition-transform duration-300 group-hover:scale-115 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
-                    <SkillLogo
-                      name={s.name}
-                      size={60}
-                      className="transition-all duration-300 group-hover:brightness-110"
-                    />
-                  </div>
-                  <span
-                    title={s.name}
-                    className="mt-3 text-sm sm:text-[15px] font-semibold text-white tracking-wide transition group-hover:text-violet-300 leading-tight"
+            {/* Open, Spacious Skill Grid — client-only render to avoid hydration mismatch */}
+            {mounted && (
+              <div className="flex flex-wrap justify-center items-start gap-x-10 sm:gap-x-14 md:gap-x-16 gap-y-14 max-w-5xl mx-auto py-6">
+                {displayedSkills.map((s) => (
+                  <div
+                    key={s.name}
+                    className="group flex flex-col items-center justify-start text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-[120px]"
                   >
-                    {s.shortName || s.name}
-                  </span>
-                  {s.note && (
-                    <span className="mt-1 text-[11px] font-medium text-violet-400">
-                      ({s.note})
+                    <div className="flex h-16 w-16 sm:h-[84px] sm:w-[84px] items-center justify-center transition-transform duration-300 group-hover:scale-115 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
+                      <SkillLogo
+                        name={s.name}
+                        size={65}
+                        className="transition-all duration-300 group-hover:brightness-110"
+                      />
+                    </div>
+                    <span
+                      title={s.name}
+                      className="mt-3 text-sm sm:text-[15px] font-semibold text-white tracking-wide transition group-hover:text-violet-300 leading-tight"
+                    >
+                      {s.shortName || s.name}
                     </span>
-                  )}
-                </div>
-              ))}
-            </div>
+                    {s.note && (
+                      <span className="mt-1 text-[11px] font-medium text-violet-400">
+                        ({s.note})
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
 
           {/* Experience Section */}
