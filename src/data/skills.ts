@@ -1,9 +1,39 @@
-export type Skill = { name: string; note?: string };
+export type Skill = { name: string; shortName?: string; note?: string };
 
 export const skillGroups: { title: string; items: Skill[] }[] = [
-  { title: "Programming & web", items: [{ name: "C++" }, { name: "C" }, { name: "HTML & CSS" }, { name: "Data structures & algorithms", note: "learning" }, { name: "E-commerce website", note: "building" }, { name: "Git & GitHub", note: "basics" }] },
-  { title: "Hardware & robotics", items: [{ name: "Arduino" }, { name: "NodeMCU ESP8266/32" }, { name: "IoT systems" }, { name: "Sensor interfacing" }, { name: "Embedded systems", note: "basics" }, { name: "Robotics prototyping" }] },
-  { title: "AI, tools & cloud", items: [{ name: "NVIDIA Jetson Nano", note: "basics" }, { name: "Isaac Sim", note: "basics" }, { name: "Docker", note: "fundamentals" }, { name: "Linux", note: "basics" }, { name: "Cloud", note: "fundamentals" }, { name: "AI/ML", note: "basics" }] },
+  {
+    title: "Programming & web",
+    items: [
+      { name: "C++", shortName: "C++" },
+      { name: "C", shortName: "C" },
+      { name: "TailwindCSS", shortName: "Tailwindcss" },
+      { name: "Data structures & algorithms", shortName: "DSA", note: "learning" },
+      { name: "E-commerce website", shortName: "E-Commerce", note: "building" },
+      { name: "Git & GitHub", shortName: "GitHub" },
+    ],
+  },
+  {
+    title: "Hardware & robotics",
+    items: [
+      { name: "Arduino", shortName: "Arduino" },
+      { name: "NodeMCU ESP8266/32", shortName: "NodeMCU ESP32" },
+      { name: "IoT systems", shortName: "IoT Systems" },
+      { name: "Sensor interfacing", shortName: "Sensors" },
+      { name: "Embedded systems", shortName: "Embedded", note: "basics" },
+      { name: "Robotics prototyping", shortName: "Robotics" },
+    ],
+  },
+  {
+    title: "AI, tools & cloud",
+    items: [
+      { name: "NVIDIA Jetson Nano", shortName: "Jetson Nano", note: "basics" },
+      { name: "Isaac Sim", shortName: "Isaac Sim", note: "basics" },
+      { name: "Docker", shortName: "Docker", note: "fundamentals" },
+      { name: "Linux", shortName: "Linux", note: "basics" },
+      { name: "Cloud", shortName: "Cloud", note: "fundamentals" },
+      { name: "AI/ML", shortName: "AI / ML", note: "basics" },
+    ],
+  },
 ];
 
 export const experience = [

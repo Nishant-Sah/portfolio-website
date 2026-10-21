@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useReducedMotion, useScroll, useMotionValueEvent } from "motion/react";
 import TypedText from "./TypedText";
 import { useHeroIntro } from "@/context/HeroIntroContext";
@@ -7,14 +7,19 @@ import { useHeroIntro } from "@/context/HeroIntroContext";
 const words = ["Hi, I'm Nishant", "Robotics & IoT", "C++ and DSA", "Let's build"];
 
 export default function FloatingBadge() {
+  const [mounted, setMounted] = useState(false);
   const reduce = useReducedMotion();
   const { isRevealed } = useHeroIntro();
   const { scrollY } = useScroll();
   const [scrolledPast, setScrolledPast] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (v) => setScrolledPast(v > 160));
 
-  if (!isRevealed) return null;
+  if (!mounted || !isRevealed) return null;
 
   return (
     <motion.a
