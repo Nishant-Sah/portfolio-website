@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
@@ -85,7 +85,7 @@ export default function Home() {
             }`}
           >
             <p className="relative z-10 mt-2 text-sm text-violet-300 sm:mt-3">
-              Computer Engineering · {site.university} · 2nd year, 1st semester
+              Computer Engineering Â· {site.university} Â· 2nd year, 1st semester
             </p>
             <h1 className="relative z-10 mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
               Nishant{" "}
@@ -94,7 +94,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="relative z-10 mt-3 text-lg text-zinc-300 md:text-xl">
-              Computer Engineering Student · Robotics & IoT · Lifelong learner
+              Computer Engineering Student Â· Robotics & IoT Â· Lifelong learner
             </p>
             <p className="relative z-10 mt-2 min-h-6 font-mono text-violet-300">
               Exploring{" "}
@@ -190,7 +190,7 @@ export default function Home() {
             <div className="max-w-3xl">
               <h2 className={h2}>Mini Projects</h2>
               <p className="mt-2 text-base leading-relaxed text-zinc-300">
-                Smaller hands-on builds — sensor experiments, assistive tech, automation, and robotics exercises.
+                Smaller hands-on builds â€” sensor experiments, assistive tech, automation, and robotics exercises.
               </p>
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -236,67 +236,64 @@ export default function Home() {
 
           {/* Skills Section */}
           <section id="skills" className={section}>
-            <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10">
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-violet-300 backdrop-blur shadow-sm">
-                Skills
-              </span>
-              <h2 className={`${h2} mt-3 text-white`}>Technical Arsenal & Tools</h2>
-              <p className="mt-2 text-sm sm:text-base text-zinc-300">
-                Languages, frameworks, hardware architectures, and developer tooling I work with.
-              </p>
-
-              {/* Category Filter Pills — client-only to avoid hydration mismatch */}
-              {mounted && (
-                <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-                  {["All", ...skillGroups.map((g) => g.title)].map((cat) => (
-                    <button
-                      key={cat}
-                      onClick={() => setActiveSkillCategory(cat)}
-                      className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 ${
-                        activeSkillCategory === cat
-                          ? "bg-violet-600 text-white shadow-[0_0_20px_rgba(124,58,237,0.45)] border border-violet-400/60"
-                          : "bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5"
-                      }`}
+            {mounted && (
+              <>
+                <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-violet-300 backdrop-blur shadow-sm">
+                    Skills
+                  </span>
+                  <h2 className={`${h2} mt-3 text-white`}>Technical Arsenal & Tools</h2>
+                  <p className="mt-2 text-sm sm:text-base text-zinc-300">
+                    Languages, frameworks, hardware architectures, and developer tooling I work with.
+                  </p>
+                  {/* Category Filter Pills */}
+                  <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+                    {["All", ...skillGroups.map((g) => g.title)].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setActiveSkillCategory(cat)}
+                        className={`rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium transition-all duration-200 ${
+                          activeSkillCategory === cat
+                            ? "bg-violet-600 text-white shadow-[0_0_20px_rgba(124,58,237,0.45)] border border-violet-400/60"
+                            : "bg-white/[0.04] text-zinc-400 hover:text-white hover:bg-white/[0.08] border border-white/5"
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                {/* Skill Grid */}
+                <div className="flex flex-wrap justify-center items-start gap-x-10 sm:gap-x-14 md:gap-x-16 gap-y-14 max-w-5xl mx-auto py-6">
+                  {displayedSkills.map((s) => (
+                    <div
+                      key={s.name}
+                      className="group flex flex-col items-center justify-start text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-[120px]"
                     >
-                      {cat}
-                    </button>
+                      <div className="flex h-16 w-16 sm:h-[84px] sm:w-[84px] items-center justify-center transition-transform duration-300 group-hover:scale-115 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
+                        <SkillLogo
+                          name={s.name}
+                          size={65}
+                          className="transition-all duration-300 group-hover:brightness-110"
+                        />
+                      </div>
+                      <span
+                        title={s.name}
+                        className="mt-3 text-sm sm:text-[15px] font-semibold text-white tracking-wide transition group-hover:text-violet-300 leading-tight"
+                      >
+                        {s.shortName || s.name}
+                      </span>
+                      {s.note && (
+                        <span className="mt-1 text-[11px] font-medium text-violet-400">
+                          ({s.note})
+                        </span>
+                      )}
+                    </div>
                   ))}
                 </div>
-              )}
-            </div>
-
-            {/* Open, Spacious Skill Grid — client-only render to avoid hydration mismatch */}
-            {mounted && (
-              <div className="flex flex-wrap justify-center items-start gap-x-10 sm:gap-x-14 md:gap-x-16 gap-y-14 max-w-5xl mx-auto py-6">
-                {displayedSkills.map((s) => (
-                  <div
-                    key={s.name}
-                    className="group flex flex-col items-center justify-start text-center transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-[120px]"
-                  >
-                    <div className="flex h-16 w-16 sm:h-[84px] sm:w-[84px] items-center justify-center transition-transform duration-300 group-hover:scale-115 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
-                      <SkillLogo
-                        name={s.name}
-                        size={65}
-                        className="transition-all duration-300 group-hover:brightness-110"
-                      />
-                    </div>
-                    <span
-                      title={s.name}
-                      className="mt-3 text-sm sm:text-[15px] font-semibold text-white tracking-wide transition group-hover:text-violet-300 leading-tight"
-                    >
-                      {s.shortName || s.name}
-                    </span>
-                    {s.note && (
-                      <span className="mt-1 text-[11px] font-medium text-violet-400">
-                        ({s.note})
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
+              </>
             )}
           </section>
-
           {/* Experience Section */}
           <section id="experience" className={section}>
             <div className="max-w-3xl">
