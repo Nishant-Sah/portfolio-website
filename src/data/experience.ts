@@ -112,6 +112,50 @@ export const experienceData: ExperienceDetail[] = [
     ]
   },
   {
+    slug: "nvidia-edge-ai-jetson-nano",
+    title: "Edge AI with NVIDIA Jetson Nano — DLI & KU Workshop",
+    category: "Certification",
+    organization: "NVIDIA Deep Learning Institute & Kathmandu University ITC",
+    roleOrAward: "Certified Edge AI Developer",
+    date: "Jan – Feb 2026",
+    location: "Kathmandu University, Dhulikhel",
+    summary: "Certified in building robotic perception pipelines on NVIDIA Jetson Nano, real-time object detection models, simulated environments with Isaac Sim, and AI edge deployments.",
+    about: "Completed dual specialized Edge AI training: an intensive hands-on workshop on 'Edge AI with NVIDIA Jetson Nano: From Setup to Real-Time AI Applications' at Kathmandu University Information Technology Center (KUITC & IoT R&D Lab) on January 23, 2026, followed by official certification of competency in 'Getting Started with AI on Jetson Nano' from the NVIDIA Deep Learning Institute on February 24, 2026.",
+    worksDone: [
+      "Deployed optimized PyTorch and TensorRT object detection models on Jetson Nano edge GPU",
+      "Configured CSI camera pipelines and deep learning inference on CUDA cores for real-time video feeds",
+      "Built synthetic physics environments and differential drive robots inside NVIDIA Isaac Sim",
+      "Integrated RAG pipelines with vector databases for embedded and robotics knowledge retrieval"
+    ],
+    skillsGained: ["Jetson Nano Architecture", "TensorRT", "Edge AI Inference", "NVIDIA Isaac Sim", "Computer Vision Pipelines"],
+    certificate: {
+      title: "NVIDIA DLI Certificate of Competency",
+      issuer: "NVIDIA Deep Learning Institute (DLI) & Kathmandu University ITC",
+      date: "January 23 – February 24, 2026",
+      award: "Certificate of Competency (Cert ID: 6-fhOY6SSEIRkhR6h9Gp3A)",
+      verificationNote: "Official NVIDIA DLI certification awarded by Will Ramey (Sr. Director, Developer Programs) alongside KUITC Edge AI workshop completion signed by Prof. Dr. Sudan Jha.",
+      image: "/images/certificates/nvidia-ai-jetson-nano.png",
+      secondaryImage: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
+      secondaryTitle: "KUITC Edge AI with NVIDIA Jetson Nano Workshop Certificate"
+    },
+    gallery: [
+      {
+        title: "NVIDIA DLI Certificate of Competency",
+        caption: "Official Certificate of Competency in 'Getting Started with AI on Jetson Nano' (ID: 6-fhOY6SSEIRkhR6h9Gp3A).",
+        image: "/images/certificates/nvidia-ai-jetson-nano.png",
+      },
+      {
+        title: "KUITC Edge AI Workshop Certificate",
+        caption: "Official Certificate from Kathmandu University IT Center & IoT R&D Lab signed by Prof. Dr. Sudan Jha.",
+        image: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
+      },
+      {
+        title: "Jetson Nano Testing Lab",
+        caption: "Bench testing real-time camera inference and TensorRT neural networks.",
+      }
+    ]
+  },
+  {
     slug: "obstacle-avoiding-car-workshop",
     title: "Obstacle Avoiding Car Workshop",
     category: "Certification",
@@ -174,6 +218,138 @@ export const experienceData: ExperienceDetail[] = [
         title: "Official Workshop Certificate",
         caption: "Certificate of Participation in Astronomy, Satellite & Rocket Science Workshop at Shikshadeep B.S.S.",
         image: "/images/certificates/astronomy-satellite-rocket-workshop.jpg",
+      }
+    ]
+  },
+  {
+    slug: "ku-robotics-101-workshop",
+    title: "3-Days Robotics 101 Workshop — KURC",
+    category: "Certification",
+    organization: "Kathmandu University Robotics Club (KURC)",
+    roleOrAward: "Bootcamp Graduate",
+    date: "12–14 November 2025",
+    location: "Kathmandu University, Dhulikhel",
+    summary: "Completed 3-day intensive robotics fundamentals bootcamp organized by Kathmandu University Robotics Club, acquiring hands-on mastery of fundamental robotics and circuit concepts.",
+    about: "Organized by Kathmandu University Robotics Club (KURC) and supported by the Technical Training Center (TTC) at Kathmandu University, Dhulikhel, the 3-Days Robotics 101 Workshop provided rigorous foundational training in robotics engineering. The curriculum immersed attendees in breadboard circuit prototyping, analog and digital sensors, PWM motor actuation, microcontroller logic, and debugging techniques.",
+    worksDone: [
+      "Assembled and debugged electronic circuits on breadboards with microcontrollers and motor drivers",
+      "Calibrated analog sensors and integrated digital input/output peripherals for robotics control",
+      "Implemented real-time sensor polling and motor speed modulation routines",
+      "Collaborated with peers to complete culminating practical hardware robotics challenges"
+    ],
+    skillsGained: ["Robotics Fundamentals", "Breadboard Circuit Prototyping", "Sensor Interfacing", "Motor Driver Topologies", "Practical Hardware Debugging"],
+    certificate: {
+      title: "Certificate of Participation — 3-Days Robotics 101 Workshop",
+      issuer: "Kathmandu University Robotics Club (KURC) & KU-TTC",
+      date: "12th November to 14th November 2025",
+      award: "Practical Robotics 101 Certification",
+      verificationNote: "Certified by Assoc. Prof. Dr. Diwakar Bista (Assoc. Director KU-TTC / Advisor KURC) and Mr. Pranshu Bikram Karki (President KURC).",
+      image: "/images/certificates/ku-robotics-101-workshop.jpg",
+    },
+    gallery: [
+      {
+        title: "KURC Robotics 101 Certificate",
+        caption: "Official Certificate of Participation proudly presented by Kathmandu University Robotics Club.",
+        image: "/images/certificates/ku-robotics-101-workshop.jpg",
+      }
+    ]
+  },
+  {
+    slug: "cyber-security-career-conclave",
+    title: "Cyber Security Training Class — Career Conclave",
+    category: "Certification",
+    organization: "Prashikshan in association with Career Conclave",
+    roleOrAward: "Cyber Security Trainee",
+    date: "19 June – 3 July 2025",
+    location: "Kathmandu, Nepal",
+    summary: "Completed comprehensive cybersecurity training class organized by Prashikshan and Career Conclave, covering threat modeling, vulnerability assessment, and foundational defense.",
+    about: "Conducted over two weeks from June 19 to July 3, 2025, this intensive cybersecurity training class was organized by Prashikshan in association with Career Conclave and led by expert trainer Amritansu Ghimire. The program focused on core network architecture security, threat surfaces, penetration testing fundamentals, web application security vulnerabilities (OWASP Top 10), and proactive cyber hygiene.",
+    worksDone: [
+      "Explored TCP/IP network packets, port scanning methodologies, and Wireshark traffic inspection",
+      "Analyzed common cybersecurity vulnerabilities, attack vectors, and authentication weaknesses",
+      "Practiced secure coding habits and defensive measures against SQL injection and cross-site scripting",
+      "Executed lab simulations identifying security misconfigurations in virtualized environments"
+    ],
+    skillsGained: ["Network Security Fundamentals", "Vulnerability Assessment", "OWASP Top 10", "Traffic Inspection", "Defensive Security"],
+    certificate: {
+      title: "Certificate of Participation — Cyber Security Training Class",
+      issuer: "Prashikshan in association with Career Conclave",
+      date: "19th June to 3rd July, 2025",
+      award: "Cyber Security IT Training Certification",
+      verificationNote: "Certified by Ashis Prasai (CEO Prashikshan) and Amritansu Ghimire (Trainer, Cyber Security).",
+      image: "/images/certificates/cyber-security-career-conclave.jpg",
+    },
+    gallery: [
+      {
+        title: "Cyber Security Training Certificate",
+        caption: "Official Certificate of Participation presented by Prashikshan and Career Conclave.",
+        image: "/images/certificates/cyber-security-career-conclave.jpg",
+      }
+    ]
+  },
+  {
+    slug: "cyber-security-techspire",
+    title: "IT Training Class: Cyber Security — Techspire College & APU",
+    category: "Certification",
+    organization: "Prashikshan & Techspire College (in collaboration with Asia Pacific University)",
+    roleOrAward: "Cyber Security Trainee",
+    date: "3–18 July 2025",
+    location: "Techspire College, Kathmandu",
+    summary: "Completed advanced 15-day IT training class in Cyber Security hosted at Techspire College, with academic collaboration from Asia Pacific University (APU) and U-ThinkCrazy.",
+    about: "Organized by Prashikshan from July 3rd to July 18th, 2025, with Techspire College as the Venue Partner, supported by U-ThinkCrazy, and in academic collaboration with Asia Pacific University (APU). The curriculum deepened practical security engineering skills, covering firewalls, cryptography basics, endpoint defense, malware analysis fundamentals, and industry incident response frameworks.",
+    worksDone: [
+      "Configured host-based firewalls, secure subnetting rules, and encrypted communications protocols",
+      "Studied cryptographic hashing, symmetric/asymmetric encryption, and digital signatures",
+      "Analyzed endpoint attack patterns and security logging mechanisms in Linux/Windows environments",
+      "Completed end-to-end security defense challenge scenarios under trainer Amritansu Ghimire"
+    ],
+    skillsGained: ["Endpoint Security", "Applied Cryptography", "Firewall Configuration", "Threat Detection", "System Hardening"],
+    certificate: {
+      title: "Certificate of Participation — IT Training Class: Cyber Security",
+      issuer: "Prashikshan, Techspire College & Asia Pacific University (APU)",
+      date: "July 3rd to July 18th, 2025",
+      award: "Advanced Cyber Security IT Training Certification",
+      verificationNote: "Signed by Laxman Pokhrel (CEO/Principal Techspire College), Aashish Parsai (Deputy CEO), Suraj Dhungana (MD U Think Crazy), and Amritansu Ghimire.",
+      image: "/images/certificates/cyber-security-techspire.jpg",
+    },
+    gallery: [
+      {
+        title: "Techspire Cyber Security Certificate",
+        caption: "Official Certificate of Participation presented by Prashikshan, Techspire College, and APU.",
+        image: "/images/certificates/cyber-security-techspire.jpg",
+      }
+    ]
+  },
+  {
+    slug: "ai-python-career-conclave",
+    title: "AI with Python Training Class — Career Conclave",
+    category: "Certification",
+    organization: "Prashikshan in association with Career Conclave",
+    roleOrAward: "AI with Python Trainee",
+    date: "19 June – 3 July 2025",
+    location: "Kathmandu, Nepal",
+    summary: "Completed hands-on Artificial Intelligence and Python programming training class organized by Prashikshan and Career Conclave, instructed by Satkar Wagle.",
+    about: "Held from June 19 to July 3, 2025, this training class focused on Python programming tailored for Artificial Intelligence and Machine Learning applications. Instructed by Satkar Wagle and organized by Prashikshan in association with Career Conclave, the course covered Python object-oriented programming, NumPy vector manipulation, Pandas data analysis, Matplotlib visualization, and fundamental machine learning algorithms.",
+    worksDone: [
+      "Implemented data manipulation pipelines using NumPy arrays and Pandas dataframes",
+      "Built and evaluated predictive classification and regression models using Scikit-Learn",
+      "Visualized exploratory data analysis distributions and correlation matrices using Matplotlib",
+      "Constructed foundational neural network architectures and activation function experiments"
+    ],
+    skillsGained: ["Python for AI", "NumPy & Pandas", "Supervised Learning", "Data Visualization", "Machine Learning Foundations"],
+    certificate: {
+      title: "Certificate of Participation — AI with Python Training Class",
+      issuer: "Prashikshan in association with Career Conclave",
+      date: "19th June to 3rd July, 2025",
+      award: "AI with Python IT Training Certification",
+      verificationNote: "Certified by Ashis Prasai (CEO Prashikshan) and Satkar Wagle (Trainer, AI with Python).",
+      image: "/images/certificates/ai-python-career-conclave.jpg",
+    },
+    gallery: [
+      {
+        title: "AI with Python Certificate",
+        caption: "Official Certificate of Participation in AI with Python Training Class.",
+        image: "/images/certificates/ai-python-career-conclave.jpg",
       }
     ]
   },
@@ -302,36 +478,6 @@ export const experienceData: ExperienceDetail[] = [
       {
         title: "Blood Donation Camp Setup",
         caption: "Volunteering alongside medical teams during the community blood drive."
-      }
-    ]
-  },
-  {
-    slug: "nvidia-edge-ai-jetson-nano",
-    title: "NVIDIA Edge AI with Jetson Nano & Isaac Sim",
-    category: "Certification",
-    organization: "NVIDIA Deep Learning Institute (DLI) & KU NTIC",
-    roleOrAward: "Certified Edge AI Developer",
-    date: "2025 - 2026",
-    location: "Kathmandu University NTIC",
-    summary: "Certified in building robotic perception pipelines on NVIDIA Jetson Nano, simulated environments with Isaac Sim, and LLM augmentation with RAG.",
-    about: "Completed intensive specialized training through NVIDIA Deep Learning Institute workshops held at Kathmandu University NTIC. Covered embedded computer vision, neural network inference on GPU Tensor Cores, photorealistic synthetic training in Isaac Sim, and Retrieval Augmented Generation (RAG) models.",
-    worksDone: [
-      "Deployed optimized PyTorch and TensorRT object detection models on Jetson Nano",
-      "Built synthetic physics environments and differential drive robots inside NVIDIA Isaac Sim",
-      "Integrated RAG pipelines with vector databases for knowledge retrieval"
-    ],
-    skillsGained: ["Jetson Nano Architecture", "NVIDIA Isaac Sim", "Edge AI Inference", "TensorRT", "RAG Pipelines"],
-    certificate: {
-      title: "NVIDIA DLI Certificate of Competency",
-      issuer: "NVIDIA Deep Learning Institute (DLI)",
-      date: "2025 - 2026",
-      award: "Specialized Edge AI & Robotics Simulation Certification",
-      verificationNote: "Official completion of 'Getting Started with Jetson Nano' and 'Building Robots in Isaac Sim'."
-    },
-    gallery: [
-      {
-        title: "Jetson Nano Testing Lab",
-        caption: "Bench testing real-time camera inference and TensorRT neural networks."
       }
     ]
   }
