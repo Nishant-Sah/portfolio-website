@@ -4,6 +4,7 @@ export type ProjectCertificate = {
   award?: string;
   date?: string;
   note?: string;
+  image?: string;
 };
 
 export type ProjectGalleryItem = {
@@ -84,11 +85,12 @@ export const projects: Project[] = [
     detailedDescription: "Developed as a group engineering project and awarded 1st Place in the Project Demonstration competition (NPR 20,000 Cash Prize). The project implements a smart home automation architecture using a master node and client node to control appliances entirely via voice commands offline — with zero reliance on cloud or internet. The system actively talks back with voice feedback to confirm user commands and features physical robotic interaction, including left/right head/body rotation and walking motion.",
     tags: ["Offline Voice", "Master-Client", "Home Automation", "Robotics", "1st Prize", "Embedded C++", "IoT"],
     certificate: {
-      title: "1st Prize Winner — Project Demonstration",
-      issuer: "Yantra 3.0 Robotics & Innovation Festival",
-      award: "1st Place (NPR 20,000 Cash Prize) — Project Demonstration",
-      date: "2026",
-      note: "Awarded 1st place in project demonstration for our group's offline voice-controlled master-client automation, two-way voice talk-back, and interactive walking motion."
+      title: "Certificate of Achievement — First Position in Project Demonstration",
+      issuer: "Robotics Association of Nepal - EAST (Koshi Yantra 3.0)",
+      award: "1st Position Winner (NPR 20,000 Cash Prize)",
+      date: "18th & 19th Falgun 2081 B.S.",
+      note: "Secured First Position in Project Demonstration at Koshi Yantra 3.0, Fujisan Sagarmatha Boarding School, Itahari-19, Bhawanipur.",
+      image: "/images/certificates/koshi-yantra-project-demo.jpg",
     },
     features: [
       "Master node and client node distributed network for multi-room appliance control",
@@ -123,8 +125,9 @@ export const projects: Project[] = [
         caption: "Integrated audio amplifier for voice responses and motorized walking/directional movement mechanism."
       },
       {
-        title: "1st Prize Project Demonstration Award",
-        caption: "Official 1st Prize recognition and NPR 20,000 award in the Project Demonstration competition."
+        title: "1st Prize Certificate of Achievement",
+        caption: "Official First Position Certificate of Achievement awarded at Koshi Yantra 3.0 by Robotics Association of Nepal - EAST.",
+        image: "/images/certificates/koshi-yantra-project-demo.jpg"
       }
     ]
   },
@@ -139,11 +142,12 @@ export const projects: Project[] = [
     detailedDescription: "Engineered specifically for competitive robo-soccer arenas where agility, low ground clearance, and instant acceleration determine victory. Built using dual high-RPM planetary metal gear motors, heavy-duty motor drivers, custom chassis reinforcement, and low-latency wireless radio control. Advanced through tournament preliminary rounds and reached the semi-finals in competitive play.",
     tags: ["Robotics", "Motor Drivers", "High Torque", "RF Control", "Competition"],
     certificate: {
-      title: "Robo Soccer Semi-Finalist Recognition",
-      issuer: "Robotics Association of Nepal (Yantra 3.0)",
-      award: "Semi-Finalist",
-      date: "2026",
-      note: "Awarded with participation certificate, responsive ball control, and advancing to the semi-finals in the Robo Soccer tournament."
+      title: "Certificate of Participation — Robo Soccer",
+      issuer: "Robotics Association of Nepal - EAST (Koshi Yantra 3.0)",
+      award: "Robo Soccer Tournament Semi-Finalist",
+      date: "18th & 19th Falgun 2081 B.S.",
+      note: "Successfully participated in Robo Soccer at Koshi Yantra 3.0, Fujisan Sagarmatha Boarding School, Itahari-19, Bhawanipur, advancing through the brackets to the tournament semi-finals.",
+      image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
     },
     features: [
       "Custom low-profile chassis with center-of-gravity optimization for anti-topple stability",
@@ -164,7 +168,8 @@ export const projects: Project[] = [
       },
       {
         title: "Tournament Semi-Finalist Certificate",
-        caption: "Official participation certificate and semi-finalist recognition from Robotics Association of Nepal (Yantra 3.0)."
+        caption: "Official participation certificate and semi-finalist recognition from Robotics Association of Nepal - EAST (Koshi Yantra 3.0).",
+        image: "/images/certificates/koshi-yantra-robo-soccer.jpg"
       }
     ]
   },
@@ -265,6 +270,14 @@ export const projects: Project[] = [
     detailedDescription: "An autonomous mobile robot designed to explore indoor environments without human intervention. Mounted with an ultrasonic sensor on a sweeping micro-servo, the robot scans its surroundings when detecting an obstacle ahead, evaluates clearance paths to the left and right, and executes autonomous avoidance turns.",
     tags: ["Arduino", "Ultrasonic", "Servo Motor", "L298N", "Autonomous"],
     repo: "https://github.com/Nishant-Sah/Obstacle-Avoidance-Robot",
+    certificate: {
+      title: "Certificate of Participation — Obstacle Avoiding Car Workshop",
+      issuer: "Shikshadeep B.S.S., Biratnagar-9, Morang, Nepal",
+      award: "Hands-on Workshop Certification",
+      date: "2081-10-20 to 2081-10-27 B.S.",
+      note: "Awarded by Chief Minister Hon. Hikmat Kumar Karki and Shikshadeep B.S.S. leadership for active participation and project execution in the Obstacle Avoiding Car workshop.",
+      image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+    },
     features: [
       "Active 180-degree servo panning to measure situational clearances before turning",
       "Autonomous path-decision algorithm picking the widest open avenue",
@@ -281,6 +294,11 @@ export const projects: Project[] = [
       {
         title: "Navigation Test Run",
         caption: "Autonomous obstacle avoidance and path planning through indoor labyrinth tests."
+      },
+      {
+        title: "Workshop Certificate of Participation",
+        caption: "Official certificate awarded at Shikshadeep B.S.S. by Hon. Chief Minister Hikmat Kumar Karki.",
+        image: "/images/certificates/obstacle-avoiding-car-workshop.jpg"
       }
     ]
   },

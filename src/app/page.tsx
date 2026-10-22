@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
@@ -20,6 +20,8 @@ import { useHeroIntro } from "@/context/HeroIntroContext";
 
 // Defined at module level so server and client evaluate the exact same reference
 const MINI_SLUGS = new Set([
+  "robo-soccer-bot",
+  "obstacle-avoidance-robot",
   "smart-blind-stick",
   "u-turn-robot",
   "lpg-gas-temperature-detection",
@@ -190,7 +192,7 @@ export default function Home() {
             <div className="max-w-3xl">
               <h2 className={h2}>Mini Projects</h2>
               <p className="mt-2 text-base leading-relaxed text-zinc-300">
-                Smaller hands-on builds â€” sensor experiments, assistive tech, automation, and robotics exercises.
+                Hands-on competition robots, workshop builds, sensor experiments, and automation prototypes.
               </p>
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -223,11 +225,20 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
-                    {p.repo && (
-                      <span className="mt-auto flex items-center gap-1 text-[11px] font-medium text-zinc-500 transition group-hover:text-violet-300">
-                        <Code size={11} aria-hidden /> GitHub
-                      </span>
-                    )}
+                    <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-2 text-[11px]">
+                      {p.certificate ? (
+                        <span className="inline-flex items-center gap-1 font-medium text-amber-300">
+                          <Award size={12} /> Award / Certificate
+                        </span>
+                      ) : (
+                        <span className="text-zinc-500">{p.category}</span>
+                      )}
+                      {p.repo && (
+                        <span className="flex items-center gap-1 font-medium text-zinc-500 transition group-hover:text-violet-300">
+                          <Code size={11} aria-hidden /> GitHub
+                        </span>
+                      )}
+                    </div>
                   </Link>
                 </li>
               ))}
