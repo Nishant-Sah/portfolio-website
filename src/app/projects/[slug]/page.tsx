@@ -168,19 +168,60 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </h3>
                 {project.certificate.award && (
                   <p className="text-sm font-medium text-amber-200">
-                    {project.certificate.award}
+                    🏆 {project.certificate.award}
                   </p>
                 )}
                 <p className="text-xs text-zinc-400">
                   Issued by: <span className="text-zinc-300">{project.certificate.issuer}</span>
                 </p>
                 {project.certificate.note && (
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300 italic">
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300 italic border-l-2 border-amber-500/40 pl-3">
                     &ldquo;{project.certificate.note}&rdquo;
                   </p>
                 )}
               </div>
             </div>
+
+            {project.certificate.image && (
+              <div className="mt-6 pt-6 border-t border-amber-500/20 grid gap-6 md:grid-cols-2 items-center">
+                <div className="group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-black/60 shadow-2xl transition hover:border-amber-400">
+                  <a
+                    href={project.certificate.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative aspect-[4/3] w-full overflow-hidden"
+                    title="Click to view full certificate"
+                  >
+                    <img
+                      src={project.certificate.image}
+                      alt={project.certificate.title}
+                      className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                      <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                        <ExternalLink size={14} /> Open Original Certificate
+                      </span>
+                    </div>
+                  </a>
+                </div>
+                <div className="space-y-3 rounded-2xl border border-white/5 bg-white/[0.03] p-5">
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-amber-300 flex items-center gap-2">
+                    <Award size={16} /> Verified Achievement
+                  </h4>
+                  <p className="text-xs leading-relaxed text-zinc-300">
+                    Official credential validating competitive performance, technical presentation, and engineering execution. Click the preview to inspect the original high-resolution document.
+                  </p>
+                  <a
+                    href={project.certificate.image}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-amber-500/20 px-4 py-2 text-xs font-semibold text-amber-200 border border-amber-500/40 hover:bg-amber-500/30 transition"
+                  >
+                    <ExternalLink size={13} /> View Full Resolution
+                  </a>
+                </div>
+              </div>
+            )}
           </section>
         )}
 
@@ -290,19 +331,30 @@ export default async function ProjectDetailPage({ params }: Props) {
                 className="glass group overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-[0_16px_36px_rgba(129,117,255,0.18)]"
               >
                 {/* Visual Card Frame */}
-                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
-                  {/* Subtle technical grid pattern */}
-                  <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-                  
-                  <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
-                      <FolderGit2 size={24} />
-                    </div>
-                    <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
-                      Photo View #{idx + 1}
-                    </span>
+                {item.image ? (
+                  <div className="relative aspect-video w-full overflow-hidden bg-black/70 flex items-center justify-center border-b border-white/5">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
+                    {/* Subtle technical grid pattern */}
+                    <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
+                    
+                    <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
+                        <FolderGit2 size={24} />
+                      </div>
+                      <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
+                        Photo View #{idx + 1}
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 <div className="p-5">
                   <h4 className="font-semibold text-white group-hover:text-violet-200 transition">

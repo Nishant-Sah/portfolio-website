@@ -11,7 +11,8 @@ import {
   Sparkles,
   ChevronRight,
   Layers,
-  FolderGit2
+  FolderGit2,
+  ExternalLink
 } from "lucide-react";
 import { experienceData } from "@/data/experience";
 import { site } from "@/data/site";
@@ -142,6 +143,74 @@ export default async function ExperienceDetailPage({ params }: Props) {
                 )}
               </div>
             </div>
+
+            {/* Certificate Image Showcase */}
+            {item.certificate.image && (
+              <div className="mt-6 pt-6 border-t border-amber-500/20">
+                <div className="grid gap-6 md:grid-cols-2 items-start">
+                  <div className="group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-black/60 shadow-2xl transition hover:border-amber-400">
+                    <a
+                      href={item.certificate.image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block relative aspect-[4/3] w-full overflow-hidden"
+                      title="Click to view full certificate"
+                    >
+                      <img
+                        src={item.certificate.image}
+                        alt={item.certificate.title}
+                        className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                        <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                          <ExternalLink size={14} /> Open Original Certificate
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+
+                  {item.certificate.secondaryImage ? (
+                    <div className="group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-black/60 shadow-2xl transition hover:border-amber-400">
+                      <a
+                        href={item.certificate.secondaryImage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block relative aspect-[4/3] w-full overflow-hidden"
+                        title="Click to view full certificate"
+                      >
+                        <img
+                          src={item.certificate.secondaryImage}
+                          alt={item.certificate.secondaryTitle || "Secondary Certificate"}
+                          className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+                          <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                            <ExternalLink size={14} /> {item.certificate.secondaryTitle || "Open Workshop Certificate"}
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  ) : (
+                    <div className="space-y-4 rounded-2xl border border-white/5 bg-white/[0.03] p-5">
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-amber-300 flex items-center gap-2">
+                        <Award size={16} /> Credential Verification
+                      </h4>
+                      <p className="text-xs leading-relaxed text-zinc-300">
+                        This credential was officially issued to Nishant Sah following rigorous evaluation and hands-on participation. You can click on the certificate preview to view the authentic full-resolution document.
+                      </p>
+                      <a
+                        href={item.certificate.image}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-xl bg-amber-500/20 px-4 py-2 text-xs font-semibold text-amber-200 border border-amber-500/40 hover:bg-amber-500/30 transition"
+                      >
+                        <ExternalLink size={13} /> View Full Resolution
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </section>
         )}
 
@@ -215,17 +284,28 @@ export default async function ExperienceDetailPage({ params }: Props) {
                 className="glass group overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-[0_16px_36px_rgba(129,117,255,0.18)]"
               >
                 {/* Frame */}
-                <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
-                  <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-                  <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
-                      <FolderGit2 size={24} />
-                    </div>
-                    <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
-                      Event Photo #{idx + 1}
-                    </span>
+                {g.image ? (
+                  <div className="relative aspect-video w-full overflow-hidden bg-black/70 flex items-center justify-center border-b border-white/5">
+                    <img
+                      src={g.image}
+                      alt={g.title}
+                      className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
+                    <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
+                    <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
+                        <FolderGit2 size={24} />
+                      </div>
+                      <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
+                        Event Photo #{idx + 1}
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 <div className="p-5">
                   <h4 className="font-semibold text-white group-hover:text-violet-200 transition">
