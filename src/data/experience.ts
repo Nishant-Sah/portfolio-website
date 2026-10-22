@@ -16,24 +16,28 @@ export type ExperienceDetail = {
     date?: string;
     award?: string;
     verificationNote?: string;
+    image?: string;
+    secondaryImage?: string;
+    secondaryTitle?: string;
   };
   gallery: {
     title: string;
     caption: string;
+    image?: string;
   }[];
 };
 
 export const experienceData: ExperienceDetail[] = [
   {
     slug: "yantra-3-project-demonstration-1st-place",
-    title: "1st Place Winner, Project Demonstration — Yantra 3.0",
+    title: "1st Place Winner, Project Demonstration — Koshi Yantra 3.0",
     category: "Achievement",
-    organization: "Robotics Association of Nepal & Yantra Committee",
-    roleOrAward: "1st Place Winner (NPR 20,000 Cash Prize)",
-    date: "2026",
-    location: "Kathmandu, Nepal",
-    summary: "Won 1st place and NPR 20,000 cash prize in the national Project Demonstration competition with our group project: an offline voice-controlled smart automation system featuring master-client architecture, voice talk-back, and walking robotic motion.",
-    about: "In the Project Demonstration exhibition at Yantra 3.0, Nepal's premiere national robotics and innovation symposium, our engineering group showcased a distributed smart automation and interactive robotics system. Built with a decentralized master node and client node, the system allows users to control household appliances entirely through offline voice recognition — operating with zero reliance on cloud services or internet connectivity. For lifelike engagement, the robot talks back with audio confirmation and features synchronized physical motion, including left/right orientation and walking locomotion. The project earned 1st place among top engineering institutions across Nepal alongside a cash prize of NPR 20,000.",
+    organization: "Robotics Association of Nepal - EAST",
+    roleOrAward: "1st Position Winner (NPR 20,000 Cash Prize)",
+    date: "18–19 Falgun 2081 B.S.",
+    location: "Fujisan Sagarmatha School, Itahari-19",
+    summary: "Won 1st place and NPR 20,000 cash prize in the national Project Demonstration competition at Koshi Yantra 3.0 with our group project: an offline voice-controlled smart automation system featuring master-client architecture, voice talk-back, and walking robotic motion.",
+    about: "In the Project Demonstration exhibition at Koshi Yantra 3.0 ('Biggest Robotics Festival in Koshi Province'), presented by Robotics Association of Nepal - EAST at Fujisan Sagarmatha Boarding School, Itahari-19, Bhawanipur, our engineering group showcased a distributed smart automation and interactive robotics system. Built with a decentralized master node and client node, the system allows users to control household appliances entirely through offline voice recognition — operating with zero reliance on cloud services or internet connectivity. For lifelike engagement, the robot talks back with audio confirmation and features synchronized physical motion, including left/right orientation and walking locomotion. The project earned 1st place alongside a cash prize of NPR 20,000.",
     worksDone: [
       "Architected a decentralized master-client wireless network linking central voice processing to distributed appliance switching nodes",
       "Implemented edge offline speech recognition to enable private, low-latency device control without internet dependency",
@@ -43,37 +47,39 @@ export const experienceData: ExperienceDetail[] = [
     ],
     skillsGained: ["Offline Voice Recognition", "Distributed Master-Client IoT", "Robotic Kinematics & Locomotion", "Embedded Systems", "Live Technical Demonstration"],
     certificate: {
-      title: "1st Place Award Certificate — Project Demonstration",
-      issuer: "Robotics Association of Nepal (RAN) & Yantra 3.0 Committee",
-      award: "1st Place Winner · NPR 20,000 Cash Prize",
-      date: "2026",
-      verificationNote: "Officially awarded 1st place in the Project Demonstration competition at Yantra 3.0 for exceptional engineering in offline voice automation and interactive robotic motion."
+      title: "Certificate of Achievement — First Position in Project Demonstration",
+      issuer: "Robotics Association of Nepal - EAST & Koshi Yantra 3.0 Committee",
+      award: "1st Position Winner · NPR 20,000 Cash Prize",
+      date: "18–19 Falgun 2081 B.S.",
+      verificationNote: "Officially awarded First Position in the Project Demonstration competition at Koshi Yantra 3.0 for exceptional engineering in offline voice automation and interactive robotic motion.",
+      image: "/images/certificates/koshi-yantra-project-demo.jpg",
     },
     gallery: [
       {
-        title: "1st Place Trophy & Award Presentation",
-        caption: "Receiving the 1st Place Trophy and NPR 20,000 cash prize certificate on the Yantra 3.0 main stage."
+        title: "Official 1st Position Certificate of Achievement",
+        caption: "Certificate of Achievement for securing First Position in Project Demonstration at Koshi Yantra 3.0.",
+        image: "/images/certificates/koshi-yantra-project-demo.jpg",
       },
       {
         title: "Master & Client Offline Voice Demo",
-        caption: "Live demonstration of offline voice recognition controlling client devices with real-time audio talk-back."
+        caption: "Live demonstration of offline voice recognition controlling client devices with real-time audio talk-back.",
       },
       {
         title: "Locomotion & Walking Mechanism",
-        caption: "Calibrating the interactive robotic node's left-right directional turning and walking locomotion."
+        caption: "Calibrating the interactive robotic node's left-right directional turning and walking locomotion.",
       }
     ]
   },
   {
     slug: "robo-soccer-semi-finalist",
-    title: "Semi-Finalist, Robo Soccer Championship",
+    title: "Semi-Finalist & Participation, Robo Soccer — Koshi Yantra 3.0",
     category: "Achievement",
-    organization: "Robotics Association of Nepal (Yantra 3.0)",
-    roleOrAward: "Semi-Finalist Recognition",
-    date: "2026",
-    location: "Kathmandu, Nepal",
-    summary: "Qualified through rigorous league stages to the semi-finals in the national Robo Soccer tournament at Yantra 3.0 with a custom low-profile ball-handling robot.",
-    about: "The Robo Soccer Championship at Yantra 3.0 puts speed, steering accuracy, and ball control to the test on a custom pitch. Nishant designed an agile, low-ground-clearance differential drive bot outfitted with a front ball-retention scoop and sprint boost circuitry. The robot advanced through preliminary qualifiers and quarter-finals with clean sweep match scores, reaching the tournament semi-finals.",
+    organization: "Robotics Association of Nepal - EAST",
+    roleOrAward: "Robo Soccer Semi-Finalist & Participant",
+    date: "18–19 Falgun 2081 B.S.",
+    location: "Fujisan Sagarmatha School, Itahari-19",
+    summary: "Qualified through rigorous tournament knockout stages to the semi-finals in the Robo Soccer championship at Koshi Yantra 3.0 with a custom low-profile ball-handling robot.",
+    about: "The Robo Soccer Championship at Koshi Yantra 3.0, organized by Robotics Association of Nepal - EAST at Fujisan Sagarmatha Boarding School, Itahari-19, put speed, steering accuracy, and ball control to the test on an indoor competition pitch. Nishant designed an agile, low-ground-clearance differential drive bot outfitted with a front ball-retention scoop and sprint boost circuitry. The robot advanced through preliminary qualifiers and quarter-finals with clean sweep match scores, reaching the tournament semi-finals.",
     worksDone: [
       "Tuned micro-gear motor torque curves using PWM to balance sprint speed with ball dribbling stability",
       "Constructed a high-traction rubber wheel setup for aggressive acceleration on tournament turf",
@@ -82,20 +88,92 @@ export const experienceData: ExperienceDetail[] = [
     ],
     skillsGained: ["High-speed RF Remote Control", "PWM Motor Control", "Mechanical Traction Optimization", "Tournament Strategy"],
     certificate: {
-      title: "Robo Soccer Semi-Finalist Recognition",
-      issuer: "Robotics Association of Nepal (Yantra 3.0)",
+      title: "Certificate of Participation — Robo Soccer",
+      issuer: "Robotics Association of Nepal - EAST (Koshi Yantra 3.0)",
       award: "Semi-Finalist & Participation Certificate",
-      date: "2026",
-      verificationNote: "Awarded with participation certificate, responsive ball control, and advancing to the semi-finals in the Robo Soccer tournament."
+      date: "18–19 Falgun 2081 B.S.",
+      verificationNote: "Awarded with Certificate of Participation, recognizing enthusiasm, dedication, and technical robotics skills while advancing to the semi-finals in the Robo Soccer competition.",
+      image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
     },
     gallery: [
       {
+        title: "Official Robo Soccer Certificate",
+        caption: "Certificate of Participation presented by Robotics Association of Nepal - EAST at Koshi Yantra 3.0.",
+        image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
+      },
+      {
         title: "Robo Soccer Pitch Match",
-        caption: "Scoring an offensive goal past the opponent keeper robot during quarter-finals."
+        caption: "Scoring an offensive goal past the opponent keeper robot during quarter-finals.",
       },
       {
         title: "Bot Front Scoop Inspection",
-        caption: "Fine-tuning the ball collector geometry and steering angle on the practice pitch."
+        caption: "Fine-tuning the ball collector geometry and steering angle on the practice pitch.",
+      }
+    ]
+  },
+  {
+    slug: "obstacle-avoiding-car-workshop",
+    title: "Obstacle Avoiding Car Workshop",
+    category: "Certification",
+    organization: "Shikshadeep B.S.S., Biratnagar",
+    roleOrAward: "Workshop Participant & Builder",
+    date: "20–27 Magh 2081 B.S.",
+    location: "Biratnagar-9, Morang, Nepal",
+    summary: "Completed a week-long intensive hands-on robotics workshop at Shikshadeep B.S.S., building and programming an autonomous obstacle-avoiding mobile car with ultrasonic sensor scanning and motor driver kinematics.",
+    about: "Organized at Shikshadeep Boarding Secondary School in Biratnagar-9, Morang, this week-long hands-on engineering workshop immersed students in autonomous mobile robotics. Nishant participated while studying in Class XII, wiring HC-SR04 ultrasonic sensors, mounting micro-servos for rotational path-scanning, interfacing dual H-bridge motor drivers, and tuning autonomous collision avoidance firmware in C++. The certificate of participation was officially awarded in the presence of Chief Minister Hon. Hikmat Kumar Karki and Chairman Bhim Parajuli.",
+    worksDone: [
+      "Constructed differential-drive 4WD robotic chassis with ultrasonic distance sensor mounting",
+      "Programmed autonomous obstacle-detection algorithms with dynamic servo-panning clearance calculation",
+      "Tuned motor PWM velocity curves and pivot turning maneuvers to navigate confined obstacles",
+      "Presented working autonomous car prototypes during final workshop demonstrations"
+    ],
+    skillsGained: ["Autonomous Robotics", "Ultrasonic Sensor Ranging", "Microcontroller Interfacing", "Motor Driver Circuitry", "C++ Embedded Logic"],
+    certificate: {
+      title: "Certificate of Participation — Obstacle Avoiding Car Workshop",
+      issuer: "Shikshadeep Boarding Secondary School, Biratnagar",
+      date: "2081-10-20 to 2081-10-27 B.S.",
+      award: "Workshop Participant & Hardware Builder",
+      verificationNote: "Awarded by Chief Minister of Koshi Province Hon. Hikmat Kumar Karki, Chairman Bhim Parajuli, and Principal Gyan Bahadur Khadka.",
+      image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+    },
+    gallery: [
+      {
+        title: "Official Workshop Certificate",
+        caption: "Certificate of Participation awarded by Hon. Chief Minister Hikmat Kumar Karki and Shikshadeep B.S.S. leadership.",
+        image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+      }
+    ]
+  },
+  {
+    slug: "astronomy-satellite-rocket-workshop",
+    title: "Astronomy, Satellite & Rocket Science Workshop",
+    category: "Certification",
+    organization: "Shikshadeep B.S.S. & The Squad of Changemakers",
+    roleOrAward: "Active Workshop Participant",
+    date: "27 Mangsir – 2 Poush 2080 B.S.",
+    location: "Biratnagar, Nepal",
+    summary: "Participated in specialized astronomy, satellite telemetry, and rocket science workshop exploring celestial mechanics, satellite communication principles, and amateur rocketry.",
+    about: "Conducted over six intensive days at Shikshadeep Boarding Secondary School in collaboration with The Squad of Changemakers, this workshop introduced participants to practical astrophysics, satellite orbital dynamics, radio telemetry tracking, and rocket propulsion mechanics. Nishant engaged in hands-on model rocketry builds, trajectory calculations, and satellite sensor payload discussions.",
+    worksDone: [
+      "Studied orbital mechanics, satellite telemetry bands, and ground-station signal reception principles",
+      "Participated in miniature rocket assembly, stability fin alignment, and propellant physics labs",
+      "Analyzed atmospheric sensing payloads and telemetry transmission for cubesat architectures",
+      "Collaborated in team aerospace design reviews and flight-trajectory modeling"
+    ],
+    skillsGained: ["Aerospace Fundamentals", "Satellite Telemetry Principles", "Model Rocket Dynamics", "Atmospheric Sensing", "Scientific Collaboration"],
+    certificate: {
+      title: "Certificate of Participation — Astronomy / Satellite / Rocket Science Workshop",
+      issuer: "Shikshadeep B.S.S. & The Squad of Changemakers",
+      date: "27th Mangsir to 2nd Poush 2080 B.S.",
+      award: "Active Workshop Participant Certification",
+      verificationNote: "Officially awarded by Chairman Sushil Dev Bhattarai (The Squad of Changemakers), Principal Gyan Bahadur Khadka, and Chairman Bhim Parajuli.",
+      image: "/images/certificates/astronomy-satellite-rocket-workshop.jpg",
+    },
+    gallery: [
+      {
+        title: "Official Workshop Certificate",
+        caption: "Certificate of Participation in Astronomy, Satellite & Rocket Science Workshop at Shikshadeep B.S.S.",
+        image: "/images/certificates/astronomy-satellite-rocket-workshop.jpg",
       }
     ]
   },
