@@ -316,9 +316,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             ))}
           </div>
 
-          <p className="text-xs text-zinc-400 italic text-center pt-2">
-            Tip: You can add your high-res photos to <code className="text-violet-300">public/images/projects/{project.slug}/</code> to display actual build snapshots.
-          </p>
+
         </section>
 
         {/* Project Navigation */}

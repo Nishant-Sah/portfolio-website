@@ -239,9 +239,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
             ))}
           </div>
 
-          <p className="text-xs text-zinc-400 italic text-center pt-2">
-            Tip: You can add official event snapshots to <code className="text-violet-300">public/images/events/{item.slug}/</code> to display live event photos.
-          </p>
+
         </section>
 
         {/* Previous & Next Navigation */}
