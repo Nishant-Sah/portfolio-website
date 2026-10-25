@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Anton } from "next/font/google";
 import { site } from "@/data/site";
 import { HeroIntroProvider } from "@/context/HeroIntroContext";
 import FloatingBadge from "@/components/FloatingBadge";
@@ -12,6 +12,13 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
   preload: true,
+});
+
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-display",
 });
 
 const description = `${site.name} is a ${site.role.toLowerCase()} at ${site.university} building robotics, IoT and web projects.`;
@@ -40,7 +47,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${anton.variable}`}>
       <head>
         {/* Preconnect to Google Fonts CDN to reduce DNS + TLS handshake time */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
