@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Award, Layers, Shuffle } from "lucide-react";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
 import type { ExperienceDetail } from "@/data/experience";
 
 const TILT = [-3, 2.5, -1.5, 3.5, -2.5, 1.5, -3.5, 2];
@@ -20,8 +20,9 @@ type CardProps = {
 
 function StackCard({ item, i, n, progress, scattered, reduce, onScatter }: CardProps) {
   const depth = n - 1 - i;
-  const scale = useTransform(progress, [i / n, 1], [1, 1 - Math.min(depth, 6) * 0.03]);
-  const filter = useTransform(progress, [i / n, 1], ["brightness(1)", `brightness(${Math.max(0.5, 1 - Math.min(depth, 6) * 0.1)})`]);
+  const covered = useTransform(progress, (v) => Math.max(0, Math.min(depth, v * (n - 1) - i)));
+  const scale = useTransform(covered, (d) => 1 - d * 0.03);
+  const filter = useTransform(covered, (d) => `brightness(${Math.max(0.55, 1 - d * 0.08)})`);
   const rows: [string, string][] = [["Role / award", item.roleOrAward], ["Date", item.date]];
   if (item.location) rows.splice(1, 0, ["Location", item.location]);
   if (item.skillsGained?.length) rows.push(["Skills", item.skillsGained.slice(0, 3).join(", ")]);
@@ -32,11 +33,11 @@ function StackCard({ item, i, n, progress, scattered, reduce, onScatter }: CardP
       transition={{ type: "spring", stiffness: 130, damping: 18 }}
       animate={{ rotate: scattered ? TILT[i % TILT.length] : 0 }}
       className={scattered ? "relative" : "sticky mb-[14vh] last:mb-0"}
-      style={scattered ? undefined : { top: `calc(5rem + ${(i % 6) * 14}px)` }}
+      style={scattered ? undefined : { top: `calc(5rem + ${Math.min(i, 5) * 20}px)` }}
     >
       <motion.article
         onClick={scattered ? undefined : onScatter}
-        style={scattered || reduce ? undefined : { scale, filter }}
+        style={scattered || reduce ? undefined : { scale, filter, transformOrigin: "top center" }}
         whileHover={scattered ? { y: -6 } : undefined}
         className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-10 ${
           scattered ? "" : "cursor-pointer md:grid md:h-[28rem] md:grid-cols-[1.5fr_1fr] md:items-center md:gap-10"
@@ -89,6 +90,7 @@ export default function ExperienceStack({ id, title, intro, items }: Props) {
   const [scattered, setScattered] = useState(false);
   const reduce = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start start", "end end"] });
+  const smooth = useSpring(scrollYProgress, { stiffness: 140, damping: 26, mass: 0.4 });
 
   return (
     <section id={id} className="mx-auto max-w-6xl px-6 py-10 md:py-14" style={{ "--stack-accent": "#f5c542" } as React.CSSProperties}>
@@ -110,7 +112,7 @@ export default function ExperienceStack({ id, title, intro, items }: Props) {
       {!scattered && <p className="mt-3 font-mono text-xs text-zinc-400">Scroll to stack. Click a card to scatter.</p>}
       <ul ref={listRef} className={`mt-8 ${scattered ? "grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3" : "block"}`}>
         {items.map((item, i) => (
-          <StackCard key={item.slug} item={item} i={i} n={items.length} progress={scrollYProgress} scattered={scattered} reduce={reduce} onScatter={() => setScattered(true)} />
+          <StackCard key={item.slug} item={item} i={i} n={items.length} progress={smooth} scattered={scattered} reduce={reduce} onScatter={() => setScattered(true)} />
         ))}
       </ul>
     </section>

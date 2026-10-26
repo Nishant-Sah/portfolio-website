@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Code, Layers, Shuffle } from "lucide-react";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
 import type { Project } from "@/data/projects";
 
 const TILT = [-3, 2.5, -1.5, 3.5, -2.5, 1.5, -3.5, 2];
@@ -21,8 +21,9 @@ type CardProps = {
 
 function StackCard({ project, i, n, progress, scattered, reduce, onScatter }: CardProps) {
   const depth = n - 1 - i;
-  const scale = useTransform(progress, [i / n, 1], [1, 1 - depth * 0.04]);
-  const filter = useTransform(progress, [i / n, 1], ["brightness(1)", `brightness(${Math.max(0.45, 1 - depth * 0.14)})`]);
+  const covered = useTransform(progress, (v) => Math.max(0, Math.min(depth, v * (n - 1) - i)));
+  const scale = useTransform(covered, (d) => 1 - d * 0.03);
+  const filter = useTransform(covered, (d) => `brightness(${Math.max(0.55, 1 - d * 0.08)})`);
   const wide = !scattered;
   const rows: [string, string][] = [];
   if (project.status) rows.push(["Status", project.status]);
@@ -37,11 +38,11 @@ function StackCard({ project, i, n, progress, scattered, reduce, onScatter }: Ca
       transition={{ type: "spring", stiffness: 130, damping: 18 }}
       animate={{ rotate: scattered ? TILT[i % TILT.length] : 0 }}
       className={scattered ? "relative" : "sticky mb-[14vh] last:mb-0"}
-      style={scattered ? undefined : { top: `calc(5rem + ${i * 14}px)` }}
+      style={scattered ? undefined : { top: `calc(5rem + ${Math.min(i, 5) * 20}px)` }}
     >
       <motion.article
         onClick={scattered ? undefined : onScatter}
-        style={scattered || reduce ? undefined : { scale, filter }}
+        style={scattered || reduce ? undefined : { scale, filter, transformOrigin: "top center" }}
         whileHover={scattered ? { y: -6 } : undefined}
         className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-10 ${
           scattered ? "" : "cursor-pointer"
@@ -105,6 +106,7 @@ export default function ProjectStack({ id, title, intro, projects }: Props) {
   const [scattered, setScattered] = useState(false);
   const reduce = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start start", "end end"] });
+  const smooth = useSpring(scrollYProgress, { stiffness: 140, damping: 26, mass: 0.4 });
 
   return (
     <section id={id} className="mx-auto max-w-6xl px-6 py-10 md:py-14" style={{ "--stack-accent": "#f5c542" } as React.CSSProperties}>
@@ -131,7 +133,7 @@ export default function ProjectStack({ id, title, intro, projects }: Props) {
             project={p}
             i={i}
             n={projects.length}
-            progress={scrollYProgress}
+            progress={smooth}
             scattered={scattered}
             reduce={reduce}
             onScatter={() => setScattered(true)}
