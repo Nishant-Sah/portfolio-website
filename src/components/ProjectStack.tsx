@@ -139,6 +139,7 @@ export default function ProjectStack({ id, title, intro, projects }: Props) {
             onScatter={() => setScattered(true)}
           />
         ))}
+        {!scattered && <li aria-hidden className="h-[4vh]" />}
       </ul>
     </section>
   );

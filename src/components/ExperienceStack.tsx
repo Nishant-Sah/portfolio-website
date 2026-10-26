@@ -114,6 +114,7 @@ export default function ExperienceStack({ id, title, intro, items }: Props) {
         {items.map((item, i) => (
           <StackCard key={item.slug} item={item} i={i} n={items.length} progress={smooth} scattered={scattered} reduce={reduce} onScatter={() => setScattered(true)} />
         ))}
+        {!scattered && <li aria-hidden className="h-[4vh]" />}
       </ul>
     </section>
   );
