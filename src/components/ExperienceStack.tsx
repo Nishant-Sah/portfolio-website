@@ -31,15 +31,15 @@ function StackCard({ item, i, n, progress, scattered, reduce, onScatter }: CardP
       layout={!reduce}
       transition={{ type: "spring", stiffness: 130, damping: 18 }}
       animate={{ rotate: scattered ? TILT[i % TILT.length] : 0 }}
-      className={scattered ? "relative" : "sticky mb-[12vh] last:mb-0"}
+      className={scattered ? "relative" : "sticky mb-[14vh] last:mb-0"}
       style={scattered ? undefined : { top: `calc(5rem + ${(i % 6) * 14}px)` }}
     >
       <motion.article
         onClick={scattered ? undefined : onScatter}
         style={scattered || reduce ? undefined : { scale, filter }}
         whileHover={scattered ? { y: -6 } : undefined}
-        className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-8 ${
-          scattered ? "" : "cursor-pointer md:grid md:grid-cols-[1.5fr_1fr] md:gap-8"
+        className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-10 ${
+          scattered ? "" : "cursor-pointer md:grid md:h-[28rem] md:grid-cols-[1.5fr_1fr] md:items-center md:gap-10"
         }`}
       >
         <div className="min-w-0">
@@ -47,7 +47,7 @@ function StackCard({ item, i, n, progress, scattered, reduce, onScatter }: CardP
             <span className="text-[color:var(--stack-accent)]">{"// "}{item.category}</span>
             <span className="text-zinc-400">{item.date}</span>
           </div>
-          <h3 className="mt-3 text-[clamp(1.6rem,4.2vw,3rem)] uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]">
+          <h3 className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]">
             {item.title}
           </h3>
           <p className="mt-2 text-sm font-medium text-zinc-200">{item.organization}</p>

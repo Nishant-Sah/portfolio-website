@@ -15,16 +15,15 @@ type CardProps = {
   n: number;
   progress: MotionValue<number>;
   scattered: boolean;
-  compact: boolean;
   reduce: boolean;
   onScatter: () => void;
 };
 
-function StackCard({ project, i, n, progress, scattered, compact, reduce, onScatter }: CardProps) {
+function StackCard({ project, i, n, progress, scattered, reduce, onScatter }: CardProps) {
   const depth = n - 1 - i;
   const scale = useTransform(progress, [i / n, 1], [1, 1 - depth * 0.04]);
   const filter = useTransform(progress, [i / n, 1], ["brightness(1)", `brightness(${Math.max(0.45, 1 - depth * 0.14)})`]);
-  const wide = !scattered && !compact;
+  const wide = !scattered;
   const rows: [string, string][] = [];
   if (project.status) rows.push(["Status", project.status]);
   rows.push(["Category", project.category]);
@@ -37,23 +36,21 @@ function StackCard({ project, i, n, progress, scattered, compact, reduce, onScat
       layout={!reduce}
       transition={{ type: "spring", stiffness: 130, damping: 18 }}
       animate={{ rotate: scattered ? TILT[i % TILT.length] : 0 }}
-      className={scattered ? "relative" : "sticky mb-[16vh] last:mb-0"}
+      className={scattered ? "relative" : "sticky mb-[14vh] last:mb-0"}
       style={scattered ? undefined : { top: `calc(5rem + ${i * 14}px)` }}
     >
       <motion.article
         onClick={scattered ? undefined : onScatter}
         style={scattered || reduce ? undefined : { scale, filter }}
         whileHover={scattered ? { y: -6 } : undefined}
-        className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-8 ${
+        className={`rounded-3xl border border-white/10 bg-[#0e0e12] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.55)] transition-colors hover:border-[color:var(--stack-accent)] sm:p-10 ${
           scattered ? "" : "cursor-pointer"
-        } ${wide ? "md:grid md:grid-cols-[1.5fr_1fr] md:gap-8" : ""}`}
+        } ${wide ? "md:grid md:h-[28rem] md:grid-cols-[1.5fr_1fr] md:items-center md:gap-10" : ""}`}
       >
         <div className="min-w-0">
           <p className="font-mono text-xs text-[color:var(--stack-accent)]">{"// "}{project.category}</p>
           <h3
-            className={`mt-3 uppercase leading-[0.95] text-white [font-family:var(--font-display),Impact,sans-serif] ${
-              compact ? "text-[clamp(1.5rem,3.6vw,2.4rem)]" : "text-[clamp(2rem,5.2vw,3.8rem)]"
-            }`}
+            className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]"
           >
             {project.title}
           </h3>
@@ -103,7 +100,7 @@ function StackCard({ project, i, n, progress, scattered, compact, reduce, onScat
 
 type Props = { id: string; title: string; intro: string; projects: Project[]; compact?: boolean };
 
-export default function ProjectStack({ id, title, intro, projects, compact = false }: Props) {
+export default function ProjectStack({ id, title, intro, projects }: Props) {
   const listRef = useRef<HTMLUListElement>(null);
   const [scattered, setScattered] = useState(false);
   const reduce = useReducedMotion() ?? false;
@@ -136,7 +133,6 @@ export default function ProjectStack({ id, title, intro, projects, compact = fal
             n={projects.length}
             progress={scrollYProgress}
             scattered={scattered}
-            compact={compact}
             reduce={reduce}
             onScatter={() => setScattered(true)}
           />
