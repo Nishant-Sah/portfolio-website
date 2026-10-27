@@ -169,7 +169,7 @@ export default function PhotoFloat({
             className="absolute -bottom-10 left-1/2 z-30 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-violet-400/50 bg-[#16122c]/95 px-5 py-2 text-xs font-semibold text-violet-200 shadow-[0_0_25px_rgba(129,117,255,0.45)] backdrop-blur-md transition hover:border-violet-300 hover:bg-[#201a40] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#121216] animate-pulse"
           >
             <Sparkles size={14} className="text-violet-300" aria-hidden="true" />
-            <span>Click to enter</span>
+            <span>Click or press any key to enter</span>
           </button>
         )}
       </div>

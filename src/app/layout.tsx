@@ -6,6 +6,7 @@ import FloatingBadge from "@/components/FloatingBadge";
 import ScrollAvatar from "@/components/ScrollAvatar";
 import CursorFollower from "@/components/CursorFollower";
 import SmoothScroll from "@/components/SmoothScroll";
+import KeyToEnter from "@/components/KeyToEnter";
 import "./globals.css";
 
 const inter = Inter({
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Skip to content
           </a>
           <SmoothScroll />
+          <KeyToEnter />
           <CursorFollower />
           <FloatingBadge />
           <ScrollAvatar />
