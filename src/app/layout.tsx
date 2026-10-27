@@ -5,6 +5,7 @@ import { HeroIntroProvider } from "@/context/HeroIntroContext";
 import FloatingBadge from "@/components/FloatingBadge";
 import ScrollAvatar from "@/components/ScrollAvatar";
 import CursorFollower from "@/components/CursorFollower";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             Skip to content
           </a>
+          <SmoothScroll />
           <CursorFollower />
           <FloatingBadge />
           <ScrollAvatar />
