@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { motion, useMotionValue, useReducedMotion, useTransform, type MotionStyle } from "motion/react";
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionStyle } from "motion/react";
 import { site } from "@/data/site";
 
 const word =
@@ -12,7 +12,8 @@ const shift = "(var(--bh) + 0.3em + 50%) * var(--p)";
 export default function AboutReveal({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
-  const scrollYProgress = useMotionValue(0);
+  const raw = useMotionValue(0);
+  const scrollYProgress = useSpring(raw, { stiffness: 70, damping: 20, mass: 0.6 });
 
   useEffect(() => {
     const el = ref.current;
@@ -20,7 +21,7 @@ export default function AboutReveal({ children }: { children: React.ReactNode })
     const update = () => {
       const r = el.getBoundingClientRect();
       const total = r.height - window.innerHeight;
-      scrollYProgress.set(total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 1);
+      raw.set(total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 1);
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -32,7 +33,7 @@ export default function AboutReveal({ children }: { children: React.ReactNode })
       window.removeEventListener("resize", update);
       ro.disconnect();
     };
-  }, [scrollYProgress]);
+  }, [raw]);
 
   const split = useTransform(scrollYProgress, [0.05, 0.28], [0, 1]);
   const move = useTransform(scrollYProgress, [0.4, 0.58], [0, 1]);
@@ -52,7 +53,7 @@ export default function AboutReveal({ children }: { children: React.ReactNode })
 
   return (
     <section id="about">
-      <div ref={ref} className={reduce ? "" : "h-[240svh]"}>
+      <div ref={ref} className={reduce ? "" : "h-[420svh]"}>
         <motion.div
           style={vars}
           className={`${reduce ? "relative min-h-svh py-20" : "sticky top-0 h-svh pt-16"} flex items-center justify-center overflow-hidden [--gx:0px] md:[--gx:calc((var(--gap)+var(--tw))/2)]`}

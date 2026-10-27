@@ -90,7 +90,7 @@ export default function ExperienceStack({ id, title, intro, items }: Props) {
   const [scattered, setScattered] = useState(false);
   const reduce = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start start", "end end"] });
-  const smooth = useSpring(scrollYProgress, { stiffness: 140, damping: 26, mass: 0.4 });
+  const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.6 });
 
   return (
     <section id={id} className="mx-auto max-w-6xl px-6 py-10 md:py-14" style={{ "--stack-accent": "#f5c542" } as React.CSSProperties}>
