@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useHeroIntro } from "@/context/HeroIntroContext";
 
@@ -57,10 +58,10 @@ export default function Navbar() {
         <Link
           href="/#top"
           onClick={() => setIsOpen(false)}
-          className="text-base sm:text-lg font-bold tracking-tight text-white hover:opacity-90 focus:outline-none"
+          className="inline-flex items-center transition hover:opacity-90 focus:outline-none"
           aria-label="Nishant Sah portfolio home"
         >
-          NS<span className="text-violet-400">.</span>
+          <Image src="/logo.svg" alt="" width={34} height={32} priority className="h-7 w-auto sm:h-8" />
         </Link>
 
         {/* Desktop Navigation Links */}
