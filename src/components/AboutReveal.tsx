@@ -13,7 +13,7 @@ export default function AboutReveal({ children }: { children: React.ReactNode })
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const raw = useMotionValue(0);
-  const scrollYProgress = useSpring(raw, { stiffness: 70, damping: 20, mass: 0.6 });
+  const scrollYProgress = useSpring(raw, { stiffness: 120, damping: 26, mass: 0.5 });
 
   useEffect(() => {
     const el = ref.current;
@@ -53,7 +53,7 @@ export default function AboutReveal({ children }: { children: React.ReactNode })
 
   return (
     <section id="about">
-      <div ref={ref} className={reduce ? "" : "h-[420svh]"}>
+      <div ref={ref} className={reduce ? "" : "h-[320svh]"}>
         <motion.div
           style={vars}
           className={`${reduce ? "relative min-h-svh py-20" : "sticky top-0 h-svh pt-16"} flex items-center justify-center overflow-hidden [--gx:0px] md:[--gx:calc((var(--gap)+var(--tw))/2)]`}

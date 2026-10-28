@@ -103,7 +103,7 @@ type Props = { id: string; title: string; intro: string; projects: Project[]; co
 
 export default function ProjectStack({ id, title, intro, projects }: Props) {
   const listRef = useRef<HTMLUListElement>(null);
-  const [scattered, setScattered] = useState(false);
+  const [scattered, setScattered] = useState(true);
   const reduce = useReducedMotion() ?? false;
   const { scrollYProgress } = useScroll({ target: listRef, offset: ["start start", "end end"] });
   const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.6 });
@@ -122,7 +122,7 @@ export default function ProjectStack({ id, title, intro, projects }: Props) {
           className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-medium transition hover:border-[color:var(--stack-accent)]"
         >
           {scattered ? <Layers size={16} aria-hidden /> : <Shuffle size={16} aria-hidden />}
-          {scattered ? "Stack again" : "Scatter"}
+          {scattered ? "Stack" : "Scatter"}
         </button>
       </div>
       {!scattered && <p className="mt-3 font-mono text-xs text-zinc-400">Scroll to stack. Click a card to scatter.</p>}
