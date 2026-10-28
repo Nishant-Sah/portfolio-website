@@ -26,7 +26,6 @@ const MINI_SLUGS = new Set([
   "obstacle-avoidance-robot",
   "smart-blind-stick",
   "u-turn-robot",
-  "lpg-gas-temperature-detection",
   "smart-dustbin",
   "mini-weather-monitoring-station",
 ]);

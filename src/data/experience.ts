@@ -113,37 +113,67 @@ export const experienceData: ExperienceDetail[] = [
   },
   {
     slug: "nvidia-edge-ai-jetson-nano",
-    title: "Edge AI with NVIDIA Jetson Nano — DLI & KU Workshop",
+    title: "Getting Started with AI on Jetson Nano",
     category: "Certification",
-    organization: "NVIDIA Deep Learning Institute & Kathmandu University ITC",
-    roleOrAward: "Certified Edge AI Developer",
-    date: "Jan – Feb 2026",
-    location: "Kathmandu University, Dhulikhel",
-    summary: "Certified in building robotic perception pipelines on NVIDIA Jetson Nano, real-time object detection models, simulated environments with Isaac Sim, and AI edge deployments.",
-    about: "Completed dual specialized Edge AI training: an intensive hands-on workshop on 'Edge AI with NVIDIA Jetson Nano: From Setup to Real-Time AI Applications' at Kathmandu University Information Technology Center (KUITC & IoT R&D Lab) on January 23, 2026, followed by official certification of competency in 'Getting Started with AI on Jetson Nano' from the NVIDIA Deep Learning Institute on February 24, 2026.",
+    organization: "NVIDIA Deep Learning Institute",
+    roleOrAward: "Certificate of Competency",
+    date: "February 24, 2026",
+    location: "Online / NVIDIA Developer Programs",
+    summary: "Official NVIDIA Certificate of Competency demonstrating practical mastery in building and deploying deep learning computer vision pipelines on NVIDIA Jetson Nano.",
+    about: "Awarded by the NVIDIA Deep Learning Institute (DLI) upon successfully demonstrating competence in configuring, training, and running computer vision models directly on NVIDIA Jetson Nano edge developer hardware. The curriculum covered PyTorch deep learning fundamentals, dataset collection, classification and regression model training, camera pipelines, and real-time edge AI inference accelerated by CUDA and TensorRT.",
     worksDone: [
-      "Deployed optimized PyTorch and TensorRT object detection models on Jetson Nano edge GPU",
-      "Configured CSI camera pipelines and deep learning inference on CUDA cores for real-time video feeds",
-      "Built synthetic physics environments and differential drive robots inside NVIDIA Isaac Sim",
-      "Integrated RAG pipelines with vector databases for embedded and robotics knowledge retrieval"
+      "Configured PyTorch and Jetson Inference developer container runtime on NVIDIA Jetson Nano",
+      "Trained classification and regression deep learning models using live USB/CSI camera feeds",
+      "Optimized neural networks with NVIDIA TensorRT for real-time edge GPU inference",
+      "Implemented automated image collection, labeling, and transfer learning workflows"
     ],
-    skillsGained: ["Jetson Nano Architecture", "TensorRT", "Edge AI Inference", "NVIDIA Isaac Sim", "Computer Vision Pipelines"],
+    skillsGained: ["NVIDIA Jetson Nano", "TensorRT Optimization", "PyTorch", "Computer Vision", "Edge AI Inference"],
     certificate: {
       title: "NVIDIA DLI Certificate of Competency",
-      issuer: "NVIDIA Deep Learning Institute (DLI) & Kathmandu University ITC",
-      date: "January 23 – February 24, 2026",
+      issuer: "NVIDIA Deep Learning Institute",
+      date: "February 24, 2026",
       award: "Certificate of Competency (Cert ID: 6-fhOY6SSEIRkhR6h9Gp3A)",
-      verificationNote: "Official NVIDIA DLI certification awarded by Will Ramey (Sr. Director, Developer Programs) alongside KUITC Edge AI workshop completion signed by Prof. Dr. Sudan Jha.",
+      verificationNote: "Official NVIDIA DLI certification awarded by Will Ramey (Senior Director, Developer Programs) under Certification ID 6-fhOY6SSEIRkhR6h9Gp3A.",
       image: "/images/certificates/nvidia-ai-jetson-nano.png",
-      secondaryImage: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
-      secondaryTitle: "KUITC Edge AI with NVIDIA Jetson Nano Workshop Certificate"
     },
     gallery: [
       {
-        title: "NVIDIA DLI Certificate of Competency",
-        caption: "Official Certificate of Competency in 'Getting Started with AI on Jetson Nano' (ID: 6-fhOY6SSEIRkhR6h9Gp3A).",
+        title: "Official NVIDIA DLI Certificate",
+        caption: "Certificate of Competency in 'Getting Started with AI on Jetson Nano' (ID: 6-fhOY6SSEIRkhR6h9Gp3A) signed by Will Ramey.",
         image: "/images/certificates/nvidia-ai-jetson-nano.png",
       },
+      {
+        title: "Edge AI Perception Pipeline",
+        caption: "Real-time object detection and regression inference running live on Jetson Nano CUDA cores.",
+      }
+    ]
+  },
+  {
+    slug: "ku-ntic-edge-ai-jetson-nano",
+    title: "Edge AI with NVIDIA Jetson Nano Workshop",
+    category: "Certification",
+    organization: "Kathmandu University IT Center (KUITC) & IoT R&D Lab",
+    roleOrAward: "Workshop Participant & Hardware Builder",
+    date: "January 23, 2026",
+    location: "Kathmandu University, Dhulikhel",
+    summary: "Completed a hands-on technical workshop on Edge AI with NVIDIA Jetson Nano organized by the Kathmandu University Information Technology Center and IoT R&D Lab.",
+    about: "Participated in an intensive hands-on workshop on 'Edge AI with NVIDIA Jetson Nano: From Setup to Real-Time AI Applications' organized by Kathmandu University Information Technology Center (KUITC) and the IoT R&D Lab held on January 23, 2026. The training focused on edge computing fundamentals, embedded Linux OS configuration for Jetson platforms, sensor and camera interfacing, and deploying real-time AI perception models on physical hardware.",
+    worksDone: [
+      "Set up JetPack OS, developer toolchains, and Linux environments on NVIDIA Jetson Nano hardware",
+      "Connected and calibrated camera inputs and peripheral sensors through onboard GPIO and CSI ports",
+      "Ran real-time neural network inference for object detection and visual awareness tasks",
+      "Collaborated on practical Edge AI and IoT applications under the mentorship of KU faculty"
+    ],
+    skillsGained: ["Edge AI Hardware Setup", "JetPack SDK", "KU IoT Lab Tools", "Sensor Integration", "Linux for Embedded AI"],
+    certificate: {
+      title: "Certificate of Completion — Edge AI with NVIDIA Jetson Nano",
+      issuer: "Kathmandu University Information Technology Center (KUITC) & IoT R&D Lab",
+      date: "January 23, 2026",
+      award: "Workshop Certificate of Completion",
+      verificationNote: "Official Certificate from Kathmandu University IT Center & IoT R&D Lab signed by Associate Director Prof. Dr. Sudan Jha.",
+      image: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
+    },
+    gallery: [
       {
         title: "KUITC Edge AI Workshop Certificate",
         caption: "Official Certificate from Kathmandu University IT Center & IoT R&D Lab signed by Prof. Dr. Sudan Jha.",
@@ -151,7 +181,7 @@ export const experienceData: ExperienceDetail[] = [
       },
       {
         title: "Jetson Nano Testing Lab",
-        caption: "Bench testing real-time camera inference and TensorRT neural networks.",
+        caption: "Bench testing real-time camera inference and TensorRT neural networks during the KU workshop.",
       }
     ]
   },
@@ -377,16 +407,7 @@ export const experienceData: ExperienceDetail[] = [
       award: "Youth Educator of the Year in Robotics",
       verificationNote: "Honored for dedicated service in training over 250 students in hands-on robotics and technology."
     },
-    gallery: [
-      {
-        title: "Classroom Arduino Workshop",
-        caption: "Guiding students through LED blinking and ultrasonic sensor wiring."
-      },
-      {
-        title: "Student Project Exhibition Day",
-        caption: "Students proudly demonstrating their obstacle avoidance cars built during the workshop."
-      }
-    ]
+    gallery: [],
   },
   {
     slug: "robo-war-associate-manager",

@@ -269,7 +269,7 @@ export const projects: Project[] = [
     description: "An autonomous wheeled robot that navigates unfamiliar environments using ultrasonic distance ranging and servo-swept path decisions.",
     detailedDescription: "An autonomous mobile robot designed to explore indoor environments without human intervention. Mounted with an ultrasonic sensor on a sweeping micro-servo, the robot scans its surroundings when detecting an obstacle ahead, evaluates clearance paths to the left and right, and executes autonomous avoidance turns.",
     tags: ["Arduino", "Ultrasonic", "Servo Motor", "L298N", "Autonomous"],
-    repo: "https://github.com/Nishant-Sah/Obstacle-Avoidance-Robot",
+    repo: "https://github.com/Nishant-Sah/Obstacle-Avoiding-bot-4-Wheels",
     certificate: {
       title: "Certificate of Participation — Obstacle Avoiding Car Workshop",
       issuer: "Shikshadeep B.S.S., Biratnagar-9, Morang, Nepal",
@@ -304,7 +304,7 @@ export const projects: Project[] = [
   },
   {
     slug: "u-turn-robot",
-    title: "U-Turn Robot",
+    title: "U-Turn Project",
     category: "Robotics",
     semester: "Kinematics & Movement",
     status: "Completed",
@@ -376,30 +376,6 @@ export const projects: Project[] = [
       {
         title: "Field Deployment Test",
         caption: "Soil probe and relay pumping system installed in a potted test bed."
-      }
-    ]
-  },
-  {
-    slug: "lpg-gas-temperature-detection",
-    title: "LPG Gas & Temperature Detection",
-    category: "Safety & IoT",
-    semester: "Industrial Safety",
-    status: "Completed",
-    description: "Safety alarm system that detects flammable gas concentrations and ambient heat, initiating immediate audible and visual alarms.",
-    detailedDescription: "A life-safety system designed for kitchens and commercial workshops. It monitors air quality for combustible hydrocarbon gases (LPG, propane, methane) and elevated temperatures. Upon detecting hazardous thresholds, it sounds a loud buzzer, flashes warning LEDs, and can trigger an exhaust fan or shutoff solenoid.",
-    tags: ["Sensors", "Alerts", "Safety", "Arduino"],
-    features: [
-      "High-sensitivity gas detection tuned for liquefied petroleum gas (LPG)",
-      "Dual threshold evaluation for gas parts-per-million and temperature",
-      "Immediate loud audible buzzer and flashing emergency status LEDs",
-      "Optional relay output for automatic exhaust ventilation"
-    ],
-    hardware: ["MQ-5 / MQ-2 Gas Sensor", "LM35 Temperature Sensor", "Arduino Controller", "Piezo Alarm Siren", "Indicator LEDs"],
-    software: ["Embedded C++", "Analog Gas Curve Calibration Algorithm"],
-    gallery: [
-      {
-        title: "Safety Sensor Test Unit",
-        caption: "Gas sensor calibration bench with alarm indicator LEDs and test gas release."
       }
     ]
   },
