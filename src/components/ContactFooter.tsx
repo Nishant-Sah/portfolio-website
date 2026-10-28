@@ -2,8 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 
 const nav = [
-  { label: "Home", href: "#top" },
-  { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
@@ -35,14 +33,7 @@ export default function ContactFooter() {
             </a>
           </div>
         </div>
-        <nav aria-label="Footer" className="mt-10 border-t border-white/10 pt-6">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-200">
-            {nav.map((l) => (
-              <li key={l.href}><a href={l.href} className="transition hover:text-white">{l.label}</a></li>
-            ))}
-          </ul>
-        </nav>
-        <ul className="mt-6 flex flex-wrap gap-x-10 gap-y-2 text-base font-semibold text-white">
+        <ul className="mt-10 flex flex-wrap gap-x-10 gap-y-2 border-t border-white/10 pt-6 text-base font-semibold text-white">
           {socials.map((s) => (
             <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer" className="transition hover:text-[rgb(var(--glow))]">{s.label}</a></li>
           ))}
@@ -52,9 +43,16 @@ export default function ContactFooter() {
         </p>
       </div>
       <div className="mt-8 bg-black/70 px-6 py-4 text-xs text-zinc-200">
-        <div className="mx-auto flex max-w-6xl justify-between gap-4">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}</p>
-          <a href="#top" className="transition hover:text-white">Back to top</a>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap gap-x-5 gap-y-1">
+              {nav.map((l) => (
+                <li key={l.href}><a href={l.href} className="transition hover:text-white">{l.label}</a></li>
+              ))}
+              <li><a href="#top" className="transition hover:text-white">Back to top</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </footer>

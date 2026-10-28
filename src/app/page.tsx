@@ -64,7 +64,7 @@ export default function Home() {
           {/* ONE shared square wrapper: aspect-ratio 1/1, centered with mx-auto, relative */}
           <div
             id="hero-orb-wrapper"
-            className="relative mx-auto mb-3 sm:mb-4 aspect-square w-[clamp(240px,36vw,340px)]"
+            className="relative mx-auto mb-3 sm:mb-4 aspect-square w-[clamp(260px,min(44vw,50vh),440px)]"
           >
             {/* Canvas centered on the wrapper with full-viewport drawing surface for cinematic zoom out */}
             <HeroSceneLoader />
@@ -89,7 +89,7 @@ export default function Home() {
             }`}
           >
             <p className="relative z-10 mt-2 text-sm text-violet-300 sm:mt-3">
-              Computer Engineering Â· {site.university} Â· 2nd year, 1st semester
+              Computer Engineering · {site.university} · 2nd year, 1st semester
             </p>
             <h1 className="relative z-10 mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
               Nishant{" "}
@@ -98,7 +98,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="relative z-10 mt-3 text-lg text-zinc-300 md:text-xl">
-              Computer Engineering Student Â· Robotics & IoT Â· Lifelong learner
+              Computer Engineering Student · Robotics & IoT · Lifelong learner
             </p>
             <p className="relative z-10 mt-2 min-h-6 font-mono text-violet-300">
               Exploring{" "}
@@ -153,15 +153,9 @@ export default function Home() {
         >
           {/* About Section */}
           <AboutReveal>
-            <p>
-              I am a second-year, first-semester Computer Engineering student at {site.university}, Dhulikhel. I did my +2 in Computer Science at Shikshadeep College (GPA 3.75).
-            </p>
-            <p>
-              I like building things that work in the real world: IoT systems, robots and web applications. I know C++, C, HTML and CSS well, I am working through data structures and algorithms, and I am building an e-commerce website.
-            </p>
-            <p>
-              I want to go deeper into embedded systems, Edge AI and autonomous robotics.
-            </p>
+            <p>I am a second-year, first-semester Computer Engineering student at {site.university}, Dhulikhel. I completed my +2 in Computer Science at Shikshadeep College.</p>
+            <p>I enjoy building software that solves real problems, from modern web applications to connected IoT systems. I have a strong command of C and C++, build web interfaces with HTML, CSS and JavaScript, and sharpen my problem-solving through data structures and algorithms. Right now, I am applying it all to an e-commerce website I am building.</p>
+            <p>I also explore AI and Edge AI, with NVIDIA certifications in Jetson Nano, Isaac Sim and RAG, alongside Git, Docker and cloud fundamentals. I want to keep growing across web development, AI and modern software tools.</p>
           </AboutReveal>
 
           {/* Featured Projects Section */}
@@ -178,9 +172,9 @@ export default function Home() {
                   <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-violet-300 backdrop-blur shadow-sm">
                     Skills
                   </span>
-                  <h2 className={`${h2} mt-3 text-white`}>Technical Arsenal & Tools</h2>
+                  <h2 className={`${h2} mt-3 text-white`}>Skills & Technologies</h2>
                   <p className="mt-2 text-sm sm:text-base text-zinc-300">
-                    Languages, frameworks, hardware architectures, and developer tooling I work with.
+                    Programming languages, web technologies, embedded platforms and engineering tools I work with.
                   </p>
                   {/* Category Filter Pills */}
                   <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
