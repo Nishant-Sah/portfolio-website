@@ -411,90 +411,101 @@ export const experienceData: ExperienceDetail[] = [
   },
   {
     slug: "robo-war-associate-manager",
-    title: "Associate Event Manager, ROBO WAR (Aavishkar'26)",
+    title: "Associate Event Manager, ROBO WAR (AAVISHKAR'26)",
     category: "Experience",
     organization: "Kathmandu University Robotics Club (KURC)",
-    roleOrAward: "Associate Event Manager",
+    roleOrAward: "Asso. Event Manager",
     date: "2026",
     location: "Kathmandu University, Dhulikhel",
-    summary: "Coordinated arena construction, safety inspections, bracket scheduling, and live operations for the high-octane ROBO WAR event at Aavishkar'26.",
-    about: "Aavishkar'26 is the premier annual technical festival organized at Kathmandu University. As the Associate Event Manager for the flagship ROBO WAR competition, Nishant was responsible for arena safety containment, team technical scrutinies (weight, weapon RPM, fail-safe cutoffs), referee match scoring, and coordinating the logistics for dozens of visiting collegiate teams.",
+    summary: "Served as Associate Event Manager for the flagship ROBO WAR competition at AAVISHKAR'26, coordinating tournament arena integrity, bot safety scrutiny, referee management, and live operational execution.",
+    about: "AAVISHKAR'26 is the premier annual technical festival organized by the Kathmandu University Robotics Club (KURC) at Kathmandu University. As the Associate Event Manager for the headline ROBO WAR combat competition, Nishant was recognized with an official Certificate of Appreciation for technical expertise, leadership commitment, and vital contributions that ensured the safe and seamless execution of high-intensity robot battles between collegiate engineering teams across Nepal.",
     worksDone: [
-      "Supervised arena integrity checks and reinforced poly-carbonate containment shields",
-      "Conducted rigorous technical inspections for 30+ competing bots to verify electrical safety standards",
+      "Supervised arena containment structure, safety shields, and combat pit readiness",
+      "Conducted rigorous technical inspections for 30+ competing bots to verify electrical and weapon safety standards",
       "Managed live tournament brackets, referee communications, and audience crowd flow",
-      "Resolved emergency on-ground technical disputes with fairness and poise"
+      "Resolved emergency on-ground technical disputes and operational logistics with poise"
     ],
-    skillsGained: ["Large-scale Event Logistics", "Technical Safety Compliance", "Team Coordination", "Crisis Resolution"],
+    skillsGained: ["Large-scale Event Logistics", "Technical Safety Compliance", "Team Coordination", "Crisis Resolution", "Tournament Operations"],
     certificate: {
-      title: "Letter of Commendation & Managerial Certificate",
-      issuer: "Kathmandu University Robotics Club (KURC) & Aavishkar'26 Executive Board",
+      title: "Certificate of Appreciation — Asso. Event Manager for AAVISHKAR'26",
+      issuer: "Kathmandu University Robotics Club (KURC)",
       date: "2026",
-      verificationNote: "Awarded for exceptional organizational stewardship and operational execution of ROBO WAR 2026."
+      award: "Asso. Event Manager Honor",
+      verificationNote: "In recognition of dedicated service as Asso. Event Manager for AAVISHKAR'26. Signed by Coordinator Arekn Shrestha, President Pranshu Bikram Karki, and Advisor Asso. Prof. Diwakar Bista Ph.D.",
+      image: "/images/certificates/aavishkar-robowar-event-manager.jpg",
     },
     gallery: [
       {
-        title: "ROBO WAR Arena Enclosure",
-        caption: "Overseeing safety containment and combat pit readiness before tournament kickoff."
-      },
-      {
-        title: "Technical Scrutiny Desk",
-        caption: "Weighing and inspecting bot weapon mechanisms for tournament safety adherence."
+        title: "Official KURC Certificate of Appreciation",
+        caption: "Certificate of Appreciation for dedicated service as Asso. Event Manager for AAVISHKAR'26.",
+        image: "/images/certificates/aavishkar-robowar-event-manager.jpg",
       }
     ]
   },
   {
     slug: "techx-kathmandu-2026",
-    title: "TechX Kathmandu 2026 Innovation Showcase",
+    title: "TechX Kathmandu 2026 — Cattle Health Tracker Demonstration",
     category: "Achievement",
-    organization: "TechX Nepal",
-    roleOrAward: "Invited Project Exhibitor",
-    date: "2026",
+    organization: "Vishwokarma Labs (Supported by Khalti by IME)",
+    roleOrAward: "Project Innovator & Exhibitor",
+    date: "4th April, 2026",
     location: "Kathmandu, Nepal",
-    summary: "Exhibited IoT and smart assistive hardware prototypes to industry professionals, investors, and tech leaders at TechX Kathmandu.",
-    about: "TechX Kathmandu is an innovation convention bringing together engineers, tech startups, and academic researchers. Nishant presented his Smart Blind Stick and Smart Home Monitoring prototypes, engaging with visitors, collecting user feedback, and discussing scalable manufacturing opportunities.",
+    summary: "Demonstrated the custom-engineered Cattle Health Tracker hardware prototype at Vishwokarma Labs TechX Kathmandu 2026, receiving the Participation Award for innovation and technical contribution.",
+    about: "Vishwokarma Labs TechX Kathmandu 2026 brought together forward-thinking engineers, creators, and tech leaders to celebrate grassroots innovation and cutting-edge applied technology. Nishant exhibited and live-demonstrated the Cattle Health Tracker — a telemetry-driven livestock monitoring device designed for real-time temperature tracking, activity sensing, and early health anomaly detection. The project attracted significant attention from tech enthusiasts, researchers, and event partners including Khalti by IME, earning him an official Participation Award for contributing to a community dedicated to innovation, technology, and creation.",
     worksDone: [
-      "Delivered live prototype hardware demonstrations to hundreds of event attendees",
-      "Presented technical pitch presentations on assistive technology and rural IoT monitoring",
-      "Networked with hardware manufacturers and embedded software industry leaders"
+      "Presented live hardware telemetry and sensor demonstrations of the Cattle Health Tracker prototype",
+      "Explained biometric telemetry algorithms, anomaly filtering, and livestock health tracking circuits to attendees and evaluators",
+      "Engaged in technical exchange with industry professionals, IoT developers, and investors",
+      "Gathered constructive user feedback on wearable ergonomics and agricultural deployment feasibility"
     ],
-    skillsGained: ["Technical Communication", "Product Pitching", "Feedback Iteration", "Public Demos"],
+    skillsGained: ["Live Hardware Demonstration", "IoT Product Pitching", "Livestock Telemetry Engineering", "Technical Communication", "Prototyping & Feedback Iteration"],
     certificate: {
-      title: "Certificate of Participation & Innovation Showcase",
-      issuer: "TechX Nepal Organizing Committee",
-      date: "2026",
-      verificationNote: "Awarded for active demonstration and exhibition of innovative hardware engineering projects."
+      title: "Participation Award — Vishwokarma Labs TechX Kathmandu 2026",
+      issuer: "Vishwokarma Labs (in association with Khalti by IME)",
+      date: "4th April, 2026",
+      award: "Participation Award for Innovation & Creation",
+      verificationNote: "Presented to Nishant Sah for being a part of Vishwokarma Labs TechX Kathmandu 2026 and contributing to a community dedicated to innovation, technology, and creation. Signed by Swornim Raj Shrestha.",
+      image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
     },
     gallery: [
       {
-        title: "Hardware Exhibition Booth",
-        caption: "Demonstrating the Smart Blind Stick ultrasonic haptic system to attendees."
+        title: "Official TechX Kathmandu Participation Award",
+        caption: "Participation Award presented to Nishant Sah at Vishwokarma Labs TechX Kathmandu 2026 on 4th April, 2026.",
+        image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
       }
     ]
   },
   {
     slug: "nepal-scouts-community-service",
-    title: "Certificate of Appreciation, Nepal Scouts Community Service",
+    title: "Certificate of Appreciation, Mahashivaratri Community Service — RONB & 100 Group",
     category: "Achievement",
-    organization: "Nepal Scouts & Red Cross Nepal",
-    roleOrAward: "Community Volunteer & Camp Coordinator",
-    date: "Mahashivaratri 2026",
+    organization: "Routine of Nepal Banda, 100 Group, Blood For Nepal & Vatsalya Sadan",
+    roleOrAward: "Community Volunteer & Event Support",
+    date: "February 15, 2026",
     location: "Pashupatinath, Kathmandu",
-    summary: "Awarded Certificate of Appreciation for volunteer leadership, medical assistance, and organizing blood donation camps during Mahashivaratri 2026.",
-    about: "During the massive Mahashivaratri gathering at Pashupatinath, Nishant volunteered with the Nepal Scouts to coordinate crowds, manage emergency first-aid stations, and facilitate a community blood donation camp that collected hundreds of pints for emergency blood banks.",
+    summary: "Awarded Certificate of Appreciation for selfless community volunteering, supporting devotees, and maintaining order during Mahashivaratri at Pashupatinath.",
+    about: "During the massive Mahashivaratri festival on February 15, 2026 at Pashupatinath Temple, Nishant volunteered with the campaign organized by 100 Group in collaboration with Blood For Nepal, Routine of Nepal Banda (RONB), Creating Opportunities International, and Vatsalya Sadan. He dedicated his time to supporting hundreds of thousands of visiting devotees, managing crowd flow, assisting emergency stations, and ensuring smooth operations throughout the sacred celebration. In recognition of his tireless efforts and selfless dedication, he was honored with an official Certificate of Appreciation.",
     worksDone: [
-      "Organized blood donor intake and coordinated logistics with local medical teams",
-      "Managed crowd safety and provided emergency guidance to pilgrims",
-      "Demonstrated exemplary civic leadership and humanitarian commitment"
+      "Supported pilgrims and devotees with navigation, crowd coordination, and safety guidance across the Pashupatinath premises",
+      "Assisted emergency support desks and volunteer queues in collaboration with Blood For Nepal and 100 Group",
+      "Maintained orderly visitor passage and assisted elderly and vulnerable devotees in high-density areas",
+      "Collaborated closely with civil volunteers and event organizers to ensure smooth festival flow"
     ],
-    skillsGained: ["Civic Responsibility", "Emergency First Response", "Crowd Management", "Humanitarian Service"],
+    skillsGained: ["Civic Responsibility", "Crowd Safety & Coordination", "Emergency Teamwork", "Community Leadership", "Humanitarian Service"],
     certificate: {
-      title: "Certificate of Appreciation for Social Service",
-      issuer: "Nepal Scouts National Headquarters",
-      date: "2026",
-      award: "Civic Service Excellence",
-      verificationNote: "Official citation honoring selfless community volunteering and blood donation leadership."
+      title: "Certificate of Appreciation — Mahashivaratri Community Service",
+      issuer: "Routine of Nepal Banda, 100 Group, Blood For Nepal & Creating Opportunities",
+      date: "February 15, 2026",
+      award: "Selfless Dedication & Service Award",
+      verificationNote: "Awarded in appreciation of invaluable time, commitment, and active involvement during Mahashivaratri on February 15, 2026 at Pashupatinath. Signed by Victor Paudel (Routine of Nepal Banda), Hitlal Shrestha (100 Group), Jay Krishna Mahato (Blood For Nepal), Sujit K. Chaudhary (Creating Opportunities), and Anjali Neupane (Vatsalya Sadan).",
+      image: "/images/certificates/ronb-blood-for-nepal-community-service.jpg",
     },
-    gallery: [],
+    gallery: [
+      {
+        title: "Official Certificate of Appreciation",
+        caption: "Presented by Routine of Nepal Banda, 100 Group, Blood For Nepal, Creating Opportunities, and Vatsalya Sadan.",
+        image: "/images/certificates/ronb-blood-for-nepal-community-service.jpg",
+      }
+    ],
   }
 ];

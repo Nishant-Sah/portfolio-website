@@ -191,7 +191,20 @@ export const projects: Project[] = [
     ],
     hardware: ["Microcontroller Node", "Contact Temperature Sensor (DS18B20)", "MPU6050 Accelerometer", "Wireless Transceiver", "Rechargeable Lithium Battery"],
     software: ["Arduino C++", "Data Filtering & Anomaly Detection Algorithm", "SMS / Web Alert Trigger"],
+    certificate: {
+      title: "Participation Award — Vishwokarma Labs TechX Kathmandu 2026",
+      issuer: "Vishwokarma Labs (in association with Khalti by IME)",
+      date: "4th April, 2026",
+      award: "Participation Award for Innovation & Creation",
+      note: "Officially presented to Nishant Sah for demonstrating the Cattle Health Tracker and contributing to the innovation and technology community at TechX Kathmandu 2026.",
+      image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+    },
     gallery: [
+      {
+        title: "Official TechX Kathmandu Participation Award",
+        caption: "Participation Award awarded to Nishant Sah for demonstrating Cattle Health Tracker at TechX Kathmandu 2026.",
+        image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+      },
       {
         title: "Wearable Sensor Module Prototype",
         caption: "Compact sensor enclosure designed with weather-resistant sealing for livestock collar mounting."
