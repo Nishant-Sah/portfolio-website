@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import ResumeButton from "@/components/ResumeButton";
 
 export default function Footer() {
   return (
@@ -30,6 +31,7 @@ export default function Footer() {
           >
             Email
           </a>
+          <ResumeButton variant="footer" />
         </div>
       </div>
     </footer>

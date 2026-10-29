@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useHeroIntro } from "@/context/HeroIntroContext";
+import ResumeButton from "@/components/ResumeButton";
 
 const links = [
   { href: "/#about", label: "About" },
@@ -76,6 +77,9 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li className="ml-2">
+            <ResumeButton variant="nav" />
+          </li>
         </ul>
 
         {/* Mobile Hamburger Button */}
@@ -111,7 +115,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="mt-auto border-t border-white/10 pt-6">
+          <div className="mt-auto border-t border-white/10 pt-6 flex flex-col gap-3">
+            <ResumeButton variant="hero" className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-sm font-semibold text-white transition hover:border-violet-400" />
             <Link
               href="/#contact"
               onClick={() => setIsOpen(false)}

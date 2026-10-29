@@ -14,6 +14,7 @@ import PhotoFloat from "@/components/PhotoFloat";
 import TypedText from "@/components/TypedText";
 import ContactForm from "@/components/ContactForm";
 import SkillLogo from "@/components/SkillLogo";
+import ResumeButton from "@/components/ResumeButton";
 import { site } from "@/data/site";
 import { projects } from "@/data/projects";
 import { skillGroups } from "@/data/skills";
@@ -121,15 +122,7 @@ export default function Home() {
               >
                 Contact me
               </a>
-              {site.resume && (
-                <a
-                  href={site.resume}
-                  download
-                  className={`${btn} text-zinc-300 hover:text-white`}
-                >
-                  <FileDown size={16} aria-hidden /> Download resume
-                </a>
-              )}
+              <ResumeButton className={`${btn} border border-white/20 text-zinc-200 hover:border-violet-400 hover:text-white`} />
             </div>
             <a
               href="#about"

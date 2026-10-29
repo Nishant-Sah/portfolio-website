@@ -10,7 +10,7 @@ export const site = {
   email: "nishantsah295@gmail.com",
   linkedin: "https://www.linkedin.com/in/nishant-sah-874314333/",
   github: "https://github.com/Nishant-Sah",
-  // TODO: put your resume in /public and set e.g. "/resume.pdf". Hidden while null.
+  // To connect your resume, place your PDF in /public (e.g. /public/resume.pdf) and set resume: "/resume.pdf"
   resume: null as string | null,
   photo: "/images/profile.webp",
   photoSize: { width: 1220, height: 1289 },
