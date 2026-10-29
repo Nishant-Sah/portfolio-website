@@ -495,11 +495,6 @@ export const experienceData: ExperienceDetail[] = [
       award: "Civic Service Excellence",
       verificationNote: "Official citation honoring selfless community volunteering and blood donation leadership."
     },
-    gallery: [
-      {
-        title: "Blood Donation Camp Setup",
-        caption: "Volunteering alongside medical teams during the community blood drive."
-      }
-    ]
+    gallery: [],
   }
 ];

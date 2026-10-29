@@ -266,61 +266,61 @@ export default async function ExperienceDetailPage({ params }: Props) {
         </section>
 
         {/* Photo Gallery Views */}
-        <section className="mt-16 space-y-6">
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-              <Layers size={20} className="text-violet-400" />
-              Event Gallery & Documentation Photos
-            </h2>
-            <p className="mt-1 text-sm text-zinc-400">
-              Photographs, certificates, and on-ground captures from {item.title}.
-            </p>
-          </div>
+        {item.gallery && item.gallery.length > 0 && (
+          <section className="mt-16 space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                <Layers size={20} className="text-violet-400" />
+                Event Gallery & Documentation Photos
+              </h2>
+              <p className="mt-1 text-sm text-zinc-400">
+                Photographs, certificates, and on-ground captures from {item.title}.
+              </p>
+            </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {item.gallery.map((g, idx) => (
-              <div
-                key={idx}
-                className="glass group overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-[0_16px_36px_rgba(129,117,255,0.18)]"
-              >
-                {/* Frame */}
-                {g.image ? (
-                  <div className="relative aspect-video w-full overflow-hidden bg-black/70 flex items-center justify-center border-b border-white/5">
-                    <img
-                      src={g.image}
-                      alt={g.title}
-                      className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
-                    <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-                    <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
-                        <FolderGit2 size={24} />
-                      </div>
-                      <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
-                        Event Photo #{idx + 1}
-                      </span>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {item.gallery.map((g, idx) => (
+                <div
+                  key={idx}
+                  className="glass group overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/60 hover:shadow-[0_16px_36px_rgba(129,117,255,0.18)]"
+                >
+                  {/* Frame */}
+                  {g.image ? (
+                    <div className="relative aspect-video w-full overflow-hidden bg-black/70 flex items-center justify-center border-b border-white/5">
+                      <img
+                        src={g.image}
+                        alt={g.title}
+                        className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
                     </div>
+                  ) : (
+                    <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-950/40 via-zinc-900 to-black p-6">
+                      <div className="absolute inset-0 bg-[radial-gradient(#8175ff_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
+                      <div className="relative z-10 flex flex-col items-center text-center transition duration-300 group-hover:scale-105">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-violet-500/30 bg-violet-500/15 text-violet-300 shadow-[0_0_20px_rgba(129,117,255,0.25)]">
+                          <FolderGit2 size={24} />
+                        </div>
+                        <span className="mt-3 text-xs font-semibold uppercase tracking-wider text-violet-300">
+                          Event Photo #{idx + 1}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="p-5">
+                    <h4 className="font-semibold text-white group-hover:text-violet-200 transition">
+                      {g.title}
+                    </h4>
+                    <p className="mt-2 text-xs leading-5 text-zinc-300">
+                      {g.caption}
+                    </p>
                   </div>
-                )}
-
-                <div className="p-5">
-                  <h4 className="font-semibold text-white group-hover:text-violet-200 transition">
-                    {g.title}
-                  </h4>
-                  <p className="mt-2 text-xs leading-5 text-zinc-300">
-                    {g.caption}
-                  </p>
                 </div>
-              </div>
-            ))}
-          </div>
-
-
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Previous & Next Navigation */}
         <section className="mt-20 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
