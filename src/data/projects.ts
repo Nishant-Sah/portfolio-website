@@ -61,16 +61,18 @@ export const projects: Project[] = [
     software: ["Embedded C/C++ (Arduino Framework)", "HTML/CSS (web control interface)", "Wi-Fi (802.11 b/g/n)", "HTTP", "I2C protocol"],
     gallery: [
       {
-        title: "ESP32 Hardware Setup",
-        caption: "ESP32 wired to the 4-channel relay module, DHT22 sensor, and 1602 I2C LCD on a local test bench."
+        title: "Smart Home Portal Web Interface",
+        caption: "Custom ESP32-hosted web dashboard displaying real-time temperature, humidity, appliance toggles, and auto fan threshold controls.",
+        image: "/images/projects/esp32-home-automation-dashboard.webp",
       },
       {
-        title: "Browser Control Interface",
-        caption: "Custom HTML/CSS page served by the ESP32 — toggle four appliances from any browser on the local Wi-Fi network."
+        title: "Physical Automation Model Setup",
+        caption: "Complete 2nd-semester prototype enclosure featuring light bulb, central control unit with 1602 I2C LCD, and AC relay switching socket.",
+        image: "/images/projects/esp32-home-automation-hardware.webp",
       },
       {
         title: "Auto Fan Control & LCD Feedback",
-        caption: "DHT22 triggers the fan relay when temperature exceeds the set threshold; the LCD shows live appliance states."
+        caption: "DHT22 triggers the fan relay when temperature exceeds the set threshold; the onboard LCD provides instant hardware status.",
       }
     ]
   },
@@ -200,6 +202,11 @@ export const projects: Project[] = [
       image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
     },
     gallery: [
+      {
+        title: "Live Cattle Tracker Dashboard & TechX Exhibition",
+        caption: "Real-time livestock health dashboard running live at TechX Kathmandu, featuring biometric telemetry, temperature graphs, and AI health predictor.",
+        image: "/images/projects/cattle-tracker-dashboard.webp",
+      },
       {
         title: "Official TechX Kathmandu Participation Award",
         caption: "Participation Award awarded to Nishant Sah for demonstrating Cattle Health Tracker at TechX Kathmandu 2026.",

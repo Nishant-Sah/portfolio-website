@@ -135,3 +135,4 @@ export default function ResumeButton({ className, variant = "hero" }: Props) {
     </div>
   );
 }
+

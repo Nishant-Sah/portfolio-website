@@ -472,6 +472,11 @@ export const experienceData: ExperienceDetail[] = [
         title: "Official TechX Kathmandu Participation Award",
         caption: "Participation Award presented to Nishant Sah at Vishwokarma Labs TechX Kathmandu 2026 on 4th April, 2026.",
         image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+      },
+      {
+        title: "Cattle Tracker Dashboard at TechX Exhibition",
+        caption: "Live demonstration of the Cattle Tracker web portal and mobile dashboard at the Vishwokarma Labs TechX venue.",
+        image: "/images/projects/cattle-tracker-dashboard.webp",
       }
     ]
   },
