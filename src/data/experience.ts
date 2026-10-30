@@ -439,6 +439,21 @@ export const experienceData: ExperienceDetail[] = [
         title: "Official KURC Certificate of Appreciation",
         caption: "Certificate of Appreciation for dedicated service as Asso. Event Manager for AAVISHKAR'26.",
         image: "/images/certificates/aavishkar-robowar-event-manager.jpg",
+      },
+      {
+        title: "Token of Love Memento",
+        caption: "Commemorative Token of Love stand presented in appreciation to Nishant Sah as Associate Event Manager for Robowar at AAVISHKAR'26.",
+        image: "/images/experience/robowar-token-of-love.webp",
+      },
+      {
+        title: "Leadership Connections & Organizing Committee",
+        caption: "Faculty, coordinators, and executive event organizers gathered under the Kathmandu University Silver Jubilee Initiatives banner.",
+        image: "/images/experience/robowar-leadership-connections.webp",
+      },
+      {
+        title: "Team Engagement & Volunteer Crew",
+        caption: "The energetic organizing committee and volunteer crew assembled on the tournament arena floor.",
+        image: "/images/experience/robowar-team-engagement.webp",
       }
     ]
   },
