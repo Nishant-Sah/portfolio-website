@@ -88,7 +88,7 @@ export default function Home() {
                 : "pointer-events-auto opacity-100 select-auto"
             }`}
           >
-            <p className="relative z-10 mt-2 text-sm text-violet-300 sm:mt-3">
+            <p className="relative z-10 mt-2 font-mono text-sm text-violet-300 sm:mt-3">
               Computer Engineering · {site.university} · 2nd year, 1st semester
             </p>
             <h1 className="relative z-10 mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
@@ -97,7 +97,7 @@ export default function Home() {
                 Sah
               </span>
             </h1>
-            <p className="relative z-10 mt-3 text-lg text-zinc-300 md:text-xl">
+            <p className="relative z-10 mt-3 font-mono text-lg text-zinc-300 md:text-xl">
               Computer Engineering Student · Robotics & IoT · Lifelong learner
             </p>
             <p className="relative z-10 mt-2 min-h-6 font-mono text-violet-300">

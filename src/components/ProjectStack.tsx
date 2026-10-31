@@ -51,7 +51,7 @@ function StackCard({ project, i, n, progress, scattered, reduce, onScatter }: Ca
         <div className="min-w-0">
           <p className="font-mono text-xs text-[color:var(--stack-accent)]">{"// "}{project.category}</p>
           <h3
-            className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]"
+            className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] font-bold uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]"
           >
             {project.title}
           </h3>

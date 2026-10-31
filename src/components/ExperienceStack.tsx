@@ -48,7 +48,7 @@ function StackCard({ item, i, n, progress, scattered, reduce, onScatter }: CardP
             <span className="text-[color:var(--stack-accent)]">{"// "}{item.category}</span>
             <span className="text-zinc-400">{item.date}</span>
           </div>
-          <h3 className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]">
+          <h3 className="mt-4 line-clamp-3 text-[clamp(1.9rem,4.6vw,3.4rem)] font-bold uppercase leading-[0.98] text-white [font-family:var(--font-display),Impact,sans-serif]">
             {item.title}
           </h3>
           <p className="mt-2 text-sm font-medium text-zinc-200">{item.organization}</p>

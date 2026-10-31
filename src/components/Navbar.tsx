@@ -71,7 +71,7 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="transition hover:text-white focus:outline-none"
+                className="font-mono text-[13px] transition hover:text-white focus:outline-none"
               >
                 {l.label}
               </Link>
