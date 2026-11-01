@@ -92,7 +92,7 @@ export const projects: Project[] = [
       award: "1st Position Winner (NPR 20,000 Cash Prize)",
       date: "18th & 19th Falgun 2081 B.S.",
       note: "Secured First Position in Project Demonstration at Koshi Yantra 3.0, Fujisan Sagarmatha Boarding School, Itahari-19, Bhawanipur.",
-      image: "/images/certificates/koshi-yantra-project-demo.jpg",
+      image: "/images/certificates/koshi-yantra-project-demo.webp",
     },
     features: [
       "Master node and client node distributed network for multi-room appliance control",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
       {
         title: "1st Prize Certificate of Achievement",
         caption: "Official First Position Certificate of Achievement awarded at Koshi Yantra 3.0 by Robotics Association of Nepal - EAST.",
-        image: "/images/certificates/koshi-yantra-project-demo.jpg"
+        image: "/images/certificates/koshi-yantra-project-demo.webp"
       }
     ]
   },
@@ -149,7 +149,7 @@ export const projects: Project[] = [
       award: "Robo Soccer Tournament Semi-Finalist",
       date: "18th & 19th Falgun 2081 B.S.",
       note: "Successfully participated in Robo Soccer at Koshi Yantra 3.0, Fujisan Sagarmatha Boarding School, Itahari-19, Bhawanipur, advancing through the brackets to the tournament semi-finals.",
-      image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
+      image: "/images/certificates/koshi-yantra-robo-soccer.webp",
     },
     features: [
       "Custom low-profile chassis with center-of-gravity optimization for anti-topple stability",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       {
         title: "Tournament Semi-Finalist Certificate",
         caption: "Official participation certificate and semi-finalist recognition from Robotics Association of Nepal - EAST (Koshi Yantra 3.0).",
-        image: "/images/certificates/koshi-yantra-robo-soccer.jpg"
+        image: "/images/certificates/koshi-yantra-robo-soccer.webp"
       }
     ]
   },
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       date: "4th April, 2026",
       award: "Participation Award for Innovation & Creation",
       note: "Officially presented to Nishant Sah for demonstrating the Cattle Health Tracker and contributing to the innovation and technology community at TechX Kathmandu 2026.",
-      image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+      image: "/images/certificates/techx-kathmandu-cattle-tracker.webp",
     },
     gallery: [
       {
@@ -210,7 +210,7 @@ export const projects: Project[] = [
       {
         title: "Official TechX Kathmandu Participation Award",
         caption: "Participation Award awarded to Nishant Sah for demonstrating Cattle Health Tracker at TechX Kathmandu 2026.",
-        image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+        image: "/images/certificates/techx-kathmandu-cattle-tracker.webp",
       },
       {
         title: "Wearable Sensor Module Prototype",
@@ -296,7 +296,7 @@ export const projects: Project[] = [
       award: "Hands-on Workshop Certification",
       date: "2081-10-20 to 2081-10-27 B.S.",
       note: "Awarded by Chief Minister Hon. Hikmat Kumar Karki and Shikshadeep B.S.S. leadership for active participation and project execution in the Obstacle Avoiding Car workshop.",
-      image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+      image: "/images/certificates/obstacle-avoiding-car-workshop.webp",
     },
     features: [
       "Active 180-degree servo panning to measure situational clearances before turning",
@@ -318,7 +318,7 @@ export const projects: Project[] = [
       {
         title: "Workshop Certificate of Participation",
         caption: "Official certificate awarded at Shikshadeep B.S.S. by Hon. Chief Minister Hikmat Kumar Karki.",
-        image: "/images/certificates/obstacle-avoiding-car-workshop.jpg"
+        image: "/images/certificates/obstacle-avoiding-car-workshop.webp"
       }
     ]
   },

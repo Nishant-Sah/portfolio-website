@@ -52,13 +52,13 @@ export const experienceData: ExperienceDetail[] = [
       award: "1st Position Winner · NPR 20,000 Cash Prize",
       date: "18–19 Falgun 2081 B.S.",
       verificationNote: "Officially awarded First Position in the Project Demonstration competition at Koshi Yantra 3.0 for exceptional engineering in offline voice automation and interactive robotic motion.",
-      image: "/images/certificates/koshi-yantra-project-demo.jpg",
+      image: "/images/certificates/koshi-yantra-project-demo.webp",
     },
     gallery: [
       {
         title: "Official 1st Position Certificate of Achievement",
         caption: "Certificate of Achievement for securing First Position in Project Demonstration at Koshi Yantra 3.0.",
-        image: "/images/certificates/koshi-yantra-project-demo.jpg",
+        image: "/images/certificates/koshi-yantra-project-demo.webp",
       },
       {
         title: "Master & Client Offline Voice Demo",
@@ -93,13 +93,13 @@ export const experienceData: ExperienceDetail[] = [
       award: "Semi-Finalist & Participation Certificate",
       date: "18–19 Falgun 2081 B.S.",
       verificationNote: "Awarded with Certificate of Participation, recognizing enthusiasm, dedication, and technical robotics skills while advancing to the semi-finals in the Robo Soccer competition.",
-      image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
+      image: "/images/certificates/koshi-yantra-robo-soccer.webp",
     },
     gallery: [
       {
         title: "Official Robo Soccer Certificate",
         caption: "Certificate of Participation presented by Robotics Association of Nepal - EAST at Koshi Yantra 3.0.",
-        image: "/images/certificates/koshi-yantra-robo-soccer.jpg",
+        image: "/images/certificates/koshi-yantra-robo-soccer.webp",
       },
       {
         title: "Robo Soccer Pitch Match",
@@ -134,13 +134,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "February 24, 2026",
       award: "Certificate of Competency (Cert ID: 6-fhOY6SSEIRkhR6h9Gp3A)",
       verificationNote: "Official NVIDIA DLI certification awarded by Will Ramey (Senior Director, Developer Programs) under Certification ID 6-fhOY6SSEIRkhR6h9Gp3A.",
-      image: "/images/certificates/nvidia-ai-jetson-nano.png",
+      image: "/images/certificates/nvidia-ai-jetson-nano.webp",
     },
     gallery: [
       {
         title: "Official NVIDIA DLI Certificate",
         caption: "Certificate of Competency in 'Getting Started with AI on Jetson Nano' (ID: 6-fhOY6SSEIRkhR6h9Gp3A) signed by Will Ramey.",
-        image: "/images/certificates/nvidia-ai-jetson-nano.png",
+        image: "/images/certificates/nvidia-ai-jetson-nano.webp",
       },
       {
         title: "Edge AI Perception Pipeline",
@@ -171,13 +171,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "January 23, 2026",
       award: "Workshop Certificate of Completion",
       verificationNote: "Official Certificate from Kathmandu University IT Center & IoT R&D Lab signed by Associate Director Prof. Dr. Sudan Jha.",
-      image: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
+      image: "/images/certificates/kuitc-edge-ai-jetson-nano.webp",
     },
     gallery: [
       {
         title: "KUITC Edge AI Workshop Certificate",
         caption: "Official Certificate from Kathmandu University IT Center & IoT R&D Lab signed by Prof. Dr. Sudan Jha.",
-        image: "/images/certificates/kuitc-edge-ai-jetson-nano.jpg",
+        image: "/images/certificates/kuitc-edge-ai-jetson-nano.webp",
       },
       {
         title: "Jetson Nano Testing Lab",
@@ -208,13 +208,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "2081-10-20 to 2081-10-27 B.S.",
       award: "Workshop Participant & Hardware Builder",
       verificationNote: "Awarded by Chief Minister of Koshi Province Hon. Hikmat Kumar Karki, Chairman Bhim Parajuli, and Principal Gyan Bahadur Khadka.",
-      image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+      image: "/images/certificates/obstacle-avoiding-car-workshop.webp",
     },
     gallery: [
       {
         title: "Official Workshop Certificate",
         caption: "Certificate of Participation awarded by Hon. Chief Minister Hikmat Kumar Karki and Shikshadeep B.S.S. leadership.",
-        image: "/images/certificates/obstacle-avoiding-car-workshop.jpg",
+        image: "/images/certificates/obstacle-avoiding-car-workshop.webp",
       }
     ]
   },
@@ -241,13 +241,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "27th Mangsir to 2nd Poush 2080 B.S.",
       award: "Active Workshop Participant Certification",
       verificationNote: "Officially awarded by Chairman Sushil Dev Bhattarai (The Squad of Changemakers), Principal Gyan Bahadur Khadka, and Chairman Bhim Parajuli.",
-      image: "/images/certificates/astronomy-satellite-rocket-workshop.jpg",
+      image: "/images/certificates/astronomy-satellite-rocket-workshop.webp",
     },
     gallery: [
       {
         title: "Official Workshop Certificate",
         caption: "Certificate of Participation in Astronomy, Satellite & Rocket Science Workshop at Shikshadeep B.S.S.",
-        image: "/images/certificates/astronomy-satellite-rocket-workshop.jpg",
+        image: "/images/certificates/astronomy-satellite-rocket-workshop.webp",
       }
     ]
   },
@@ -274,13 +274,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "12th November to 14th November 2025",
       award: "Practical Robotics 101 Certification",
       verificationNote: "Certified by Assoc. Prof. Dr. Diwakar Bista (Assoc. Director KU-TTC / Advisor KURC) and Mr. Pranshu Bikram Karki (President KURC).",
-      image: "/images/certificates/ku-robotics-101-workshop.jpg",
+      image: "/images/certificates/ku-robotics-101-workshop.webp",
     },
     gallery: [
       {
         title: "KURC Robotics 101 Certificate",
         caption: "Official Certificate of Participation proudly presented by Kathmandu University Robotics Club.",
-        image: "/images/certificates/ku-robotics-101-workshop.jpg",
+        image: "/images/certificates/ku-robotics-101-workshop.webp",
       }
     ]
   },
@@ -307,13 +307,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "19th June to 3rd July, 2025",
       award: "Cyber Security IT Training Certification",
       verificationNote: "Certified by Ashis Prasai (CEO Prashikshan) and Amritansu Ghimire (Trainer, Cyber Security).",
-      image: "/images/certificates/cyber-security-career-conclave.jpg",
+      image: "/images/certificates/cyber-security-career-conclave.webp",
     },
     gallery: [
       {
         title: "Cyber Security Training Certificate",
         caption: "Official Certificate of Participation presented by Prashikshan and Career Conclave.",
-        image: "/images/certificates/cyber-security-career-conclave.jpg",
+        image: "/images/certificates/cyber-security-career-conclave.webp",
       }
     ]
   },
@@ -340,13 +340,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "July 3rd to July 18th, 2025",
       award: "Advanced Cyber Security IT Training Certification",
       verificationNote: "Signed by Laxman Pokhrel (CEO/Principal Techspire College), Aashish Parsai (Deputy CEO), Suraj Dhungana (MD U Think Crazy), and Amritansu Ghimire.",
-      image: "/images/certificates/cyber-security-techspire.jpg",
+      image: "/images/certificates/cyber-security-techspire.webp",
     },
     gallery: [
       {
         title: "Techspire Cyber Security Certificate",
         caption: "Official Certificate of Participation presented by Prashikshan, Techspire College, and APU.",
-        image: "/images/certificates/cyber-security-techspire.jpg",
+        image: "/images/certificates/cyber-security-techspire.webp",
       }
     ]
   },
@@ -373,13 +373,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "19th June to 3rd July, 2025",
       award: "AI with Python IT Training Certification",
       verificationNote: "Certified by Ashis Prasai (CEO Prashikshan) and Satkar Wagle (Trainer, AI with Python).",
-      image: "/images/certificates/ai-python-career-conclave.jpg",
+      image: "/images/certificates/ai-python-career-conclave.webp",
     },
     gallery: [
       {
         title: "AI with Python Certificate",
         caption: "Official Certificate of Participation in AI with Python Training Class.",
-        image: "/images/certificates/ai-python-career-conclave.jpg",
+        image: "/images/certificates/ai-python-career-conclave.webp",
       }
     ]
   },
@@ -432,13 +432,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "2026",
       award: "Asso. Event Manager Honor",
       verificationNote: "In recognition of dedicated service as Asso. Event Manager for AAVISHKAR'26. Signed by Coordinator Arekn Shrestha, President Pranshu Bikram Karki, and Advisor Asso. Prof. Diwakar Bista Ph.D.",
-      image: "/images/certificates/aavishkar-robowar-event-manager.jpg",
+      image: "/images/certificates/aavishkar-robowar-event-manager.webp",
     },
     gallery: [
       {
         title: "Official KURC Certificate of Appreciation",
         caption: "Certificate of Appreciation for dedicated service as Asso. Event Manager for AAVISHKAR'26.",
-        image: "/images/certificates/aavishkar-robowar-event-manager.jpg",
+        image: "/images/certificates/aavishkar-robowar-event-manager.webp",
       },
       {
         title: "Token of Love Memento",
@@ -480,13 +480,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "4th April, 2026",
       award: "Participation Award for Innovation & Creation",
       verificationNote: "Presented to Nishant Sah for being a part of Vishwokarma Labs TechX Kathmandu 2026 and contributing to a community dedicated to innovation, technology, and creation. Signed by Swornim Raj Shrestha.",
-      image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+      image: "/images/certificates/techx-kathmandu-cattle-tracker.webp",
     },
     gallery: [
       {
         title: "Official TechX Kathmandu Participation Award",
         caption: "Participation Award presented to Nishant Sah at Vishwokarma Labs TechX Kathmandu 2026 on 4th April, 2026.",
-        image: "/images/certificates/techx-kathmandu-cattle-tracker.jpg",
+        image: "/images/certificates/techx-kathmandu-cattle-tracker.webp",
       },
       {
         title: "Cattle Tracker Dashboard at TechX Exhibition",
@@ -518,13 +518,13 @@ export const experienceData: ExperienceDetail[] = [
       date: "February 15, 2026",
       award: "Selfless Dedication & Service Award",
       verificationNote: "Awarded in appreciation of invaluable time, commitment, and active involvement during Mahashivaratri on February 15, 2026 at Pashupatinath. Signed by Victor Paudel (Routine of Nepal Banda), Hitlal Shrestha (100 Group), Jay Krishna Mahato (Blood For Nepal), Sujit K. Chaudhary (Creating Opportunities), and Anjali Neupane (Vatsalya Sadan).",
-      image: "/images/certificates/ronb-blood-for-nepal-community-service.jpg",
+      image: "/images/certificates/ronb-blood-for-nepal-community-service.webp",
     },
     gallery: [
       {
         title: "Official Certificate of Appreciation",
         caption: "Presented by Routine of Nepal Banda, 100 Group, Blood For Nepal, Creating Opportunities, and Vatsalya Sadan.",
-        image: "/images/certificates/ronb-blood-for-nepal-community-service.jpg",
+        image: "/images/certificates/ronb-blood-for-nepal-community-service.webp",
       }
     ],
   }
