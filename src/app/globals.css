@@ -88,3 +88,7 @@ h1, h2, h3 {
   }
 }
 
+
+html.cinematic-lock {
+  overflow: hidden !important;
+}
