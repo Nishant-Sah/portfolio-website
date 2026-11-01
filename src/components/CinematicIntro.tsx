@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { useHeroIntro } from "@/context/HeroIntroContext";
 
 type Letter = { ch: string; x: number; w: number; y: number; y0: number; vy: number; r0: number; state: 0 | 1 | 2; ts: number; sy: number; delay: number; col: string };
@@ -17,6 +18,9 @@ const lerpCol = (t: number) => {
 };
 
 export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string }) {
+  const pathname = usePathname();
+  if (pathname !== "/") return null;
+
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const api = useRef<{ play: () => void; skip: () => void; settle: () => void } | null>(null);

@@ -9,6 +9,7 @@ import React, {
   useCallback,
   ReactNode,
 } from "react";
+import { usePathname } from "next/navigation";
 import type * as THREE from "three";
 import gsap from "gsap";
 
@@ -26,12 +27,16 @@ const HeroIntroContext = createContext<HeroIntroContextType | null>(null);
 
 function getInitialIntroState(): IntroState {
   if (typeof window === "undefined") return "idle";
+  if (window.location.pathname !== "/") return "done";
   if (window.location.hash) return "done";
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return "done";
   return "idle";
 }
 
 export function HeroIntroProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
   const [state, setState] = useState<IntroState>(getInitialIntroState);
   const stateRef = useRef<IntroState>("idle");
   const wireframeMeshRef = useRef<THREE.Mesh | null>(null);
@@ -51,6 +56,13 @@ export function HeroIntroProvider({ children }: { children: ReactNode }) {
     setState(newState);
   }, []);
 
+  // Ensure state is immediately 'done' when entering any inner route
+  useEffect(() => {
+    if (!isHome && stateRef.current !== "done") {
+      updateState("done");
+    }
+  }, [isHome, updateState]);
+
   // Register Three.js wireframe mesh and material
   const registerWireframe = useCallback(
     (mesh: THREE.Mesh | null, material: THREE.Material | null) => {
@@ -65,11 +77,11 @@ export function HeroIntroProvider({ children }: { children: ReactNode }) {
     contentContainerRef.current = el;
   }, []);
 
-  // Manage scroll lock based on state
+  // Manage scroll lock based on state (only active on homepage hero)
   useEffect(() => {
     if (typeof document === "undefined") return;
 
-    if (state !== "done") {
+    if (isHome && state !== "done") {
       document.documentElement.style.overflow = "hidden";
       document.documentElement.style.scrollbarGutter = "stable";
     } else {
@@ -81,7 +93,7 @@ export function HeroIntroProvider({ children }: { children: ReactNode }) {
       document.documentElement.style.overflow = "";
       document.documentElement.style.scrollbarGutter = "";
     };
-  }, [state]);
+  }, [state, isHome]);
 
   // Trigger the reveal sequence (strictly runs once from "idle")
   const triggerReveal = useCallback(() => {
@@ -204,7 +216,7 @@ export function HeroIntroProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const isRevealed = state !== "idle";
+  const isRevealed = !isHome || state !== "idle";
 
   return (
     <HeroIntroContext.Provider
