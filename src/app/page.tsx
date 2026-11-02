@@ -91,12 +91,9 @@ export default function Home() {
             <p className="relative z-10 mt-2 font-mono text-sm text-violet-300 sm:mt-3">
               Computer Engineering · {site.university} · 2nd year, 1st semester
             </p>
-            <h1 className="relative z-10 mt-2 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl">
-              Nishant{" "}
-              <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
-                Sah
-              </span>
-            </h1>
+            <div id="hero-name-slot" className="relative z-10 my-2 h-[80px] sm:h-[120px] md:h-[160px] w-full flex items-center justify-center">
+              <h1 className="sr-only">Nishant Sah</h1>
+            </div>
             <p className="relative z-10 mt-3 font-mono text-lg text-zinc-300 md:text-xl">
               Computer Engineering Student · Robotics & IoT · Lifelong learner
             </p>
