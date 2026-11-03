@@ -64,7 +64,7 @@ export default function Home() {
           {/* ONE shared square wrapper: aspect-ratio 1/1, centered with mx-auto, relative */}
           <div
             id="hero-orb-wrapper"
-            className="relative mx-auto my-1 sm:my-2 aspect-square w-[clamp(220px,min(38vw,42vh),360px)]"
+            className="hero-visual-entrance relative mx-auto my-1 sm:my-2 aspect-square w-[clamp(220px,min(38vw,42vh),360px)]"
           >
             {/* Canvas centered on the wrapper with full-viewport drawing surface for cinematic zoom out */}
             <HeroSceneLoader />

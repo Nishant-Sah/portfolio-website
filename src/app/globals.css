@@ -92,3 +92,24 @@ h1, h2, h3 {
 html.cinematic-lock {
   overflow: hidden !important;
 }
+
+
+/* Smooth entrance animations for hero elements during cinematic reveal */
+:root {
+  --ease-hero: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-visual-entrance {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+  transition: opacity 1.3s var(--ease-hero), transform 1.3s var(--ease-hero), filter 1.3s var(--ease-hero);
+  transition-delay: 0.2s;
+}
+
+html.cinematic-lock .hero-visual-entrance {
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  filter: blur(8px);
+  transition: none;
+}
