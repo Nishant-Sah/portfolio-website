@@ -113,3 +113,36 @@ html.cinematic-lock .hero-visual-entrance {
   filter: blur(8px);
   transition: none;
 }
+
+/* Progressive staggered reveal for hero text elements */
+[data-hero-stagger] {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+  transition: opacity 0.9s var(--ease-hero), transform 0.9s var(--ease-hero), filter 0.9s var(--ease-hero);
+  transition-delay: var(--delay, 0s);
+}
+
+[data-hero-stagger="1"] { --delay: 0.25s; }
+[data-hero-stagger="2"] { --delay: 0.45s; }
+[data-hero-stagger="3"] { --delay: 0.60s; }
+[data-hero-stagger="4"] { --delay: 0.75s; }
+[data-hero-stagger="5"] { --delay: 0.90s; }
+[data-hero-stagger="6"] { --delay: 1.05s; }
+
+html.cinematic-lock [data-hero-stagger] {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual-entrance,
+  [data-hero-stagger] {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}

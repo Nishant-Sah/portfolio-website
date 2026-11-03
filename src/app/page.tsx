@@ -88,25 +88,25 @@ export default function Home() {
                 : "pointer-events-auto opacity-100 select-auto"
             }`}
           >
-            <p className="relative z-10 mt-2 font-mono text-sm text-violet-300 sm:mt-3">
+            <p data-hero-stagger="1" className="relative z-10 mt-2 font-mono text-sm text-violet-300 sm:mt-3">
               Computer Engineering · {site.university} · 2nd year, 1st semester
             </p>
-            <div id="hero-name-slot" className="relative z-10 -my-1 h-[65px] sm:h-[95px] md:h-[125px] w-full flex items-center justify-center">
+            <div id="hero-name-slot" data-hero-stagger="2" className="relative z-10 -my-1 h-[65px] sm:h-[95px] md:h-[125px] w-full flex items-center justify-center">
               <h1 className="sr-only">Nishant Sah</h1>
             </div>
-            <p className="relative z-10 mt-3 font-mono text-lg text-zinc-300 md:text-xl">
+            <p data-hero-stagger="3" className="relative z-10 mt-3 font-mono text-lg text-zinc-300 md:text-xl">
               Computer Engineering Student · Robotics & IoT · Lifelong learner
             </p>
-            <p className="relative z-10 mt-2 min-h-6 font-mono text-violet-300">
+            <p data-hero-stagger="4" className="relative z-10 mt-2 min-h-6 font-mono text-violet-300">
               Exploring{" "}
               <TypedText
                 words={["C++ and DSA", "ESP32 and IoT", "Robotics", "Edge AI on Jetson"]}
               />
             </p>
-            <p className="relative z-10 mt-3.5 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-zinc-300">
+            <p data-hero-stagger="5" className="relative z-10 mt-3.5 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-zinc-300">
               {site.tagline} Every build teaches me something the classroom cannot.
             </p>
-            <div className="relative z-10 mt-4 sm:mt-5 flex flex-wrap justify-center gap-3">
+            <div data-hero-stagger="6" className="relative z-10 mt-4 sm:mt-5 flex flex-wrap justify-center gap-3">
               <a
                 href="#projects"
                 className={`${btn} bg-gradient-to-r from-violet-500 to-pink-500 text-white hover:brightness-110`}
