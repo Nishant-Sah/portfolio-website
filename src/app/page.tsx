@@ -60,11 +60,11 @@ export default function Home() {
       <Navbar />
       <main id="main">
         {/* Hero Section */}
-        <section className="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-8 pt-[calc(3.5rem+0.75rem)] text-center md:pb-12 md:pt-[calc(4rem+1rem)]">
+        <section className="relative mx-auto flex min-h-[calc(100svh-4rem)] max-w-4xl flex-col items-center justify-center px-6 pb-6 pt-[calc(3.5rem+0.25rem)] text-center md:pb-8 md:pt-[calc(4rem+0.25rem)]">
           {/* ONE shared square wrapper: aspect-ratio 1/1, centered with mx-auto, relative */}
           <div
             id="hero-orb-wrapper"
-            className="relative mx-auto mb-3 sm:mb-4 aspect-square w-[clamp(260px,min(44vw,50vh),440px)]"
+            className="relative mx-auto my-1 sm:my-2 aspect-square w-[clamp(220px,min(38vw,42vh),360px)]"
           >
             {/* Canvas centered on the wrapper with full-viewport drawing surface for cinematic zoom out */}
             <HeroSceneLoader />
@@ -91,7 +91,7 @@ export default function Home() {
             <p className="relative z-10 mt-2 font-mono text-sm text-violet-300 sm:mt-3">
               Computer Engineering · {site.university} · 2nd year, 1st semester
             </p>
-            <div id="hero-name-slot" className="relative z-10 my-2 h-[80px] sm:h-[120px] md:h-[160px] w-full flex items-center justify-center">
+            <div id="hero-name-slot" className="relative z-10 -my-1 h-[65px] sm:h-[95px] md:h-[125px] w-full flex items-center justify-center">
               <h1 className="sr-only">Nishant Sah</h1>
             </div>
             <p className="relative z-10 mt-3 font-mono text-lg text-zinc-300 md:text-xl">
@@ -106,7 +106,7 @@ export default function Home() {
             <p className="relative z-10 mt-3.5 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-zinc-300">
               {site.tagline} Every build teaches me something the classroom cannot.
             </p>
-            <div className="relative z-10 mt-6 flex flex-wrap justify-center gap-3">
+            <div className="relative z-10 mt-4 sm:mt-5 flex flex-wrap justify-center gap-3">
               <a
                 href="#projects"
                 className={`${btn} bg-gradient-to-r from-violet-500 to-pink-500 text-white hover:brightness-110`}
@@ -124,7 +124,7 @@ export default function Home() {
             <a
               href="#about"
               aria-label="Scroll to about"
-              className="relative z-10 mt-7 inline-flex h-9 w-5.5 justify-center rounded-full border border-white/30 pt-1.5"
+              className="relative z-10 mt-4 sm:mt-5 inline-flex h-8 w-5 justify-center rounded-full border border-white/30 pt-1"
             >
               <span className="h-1.5 w-1 animate-bounce rounded-full bg-white/70" />
             </a>
