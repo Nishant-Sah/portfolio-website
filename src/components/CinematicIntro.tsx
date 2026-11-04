@@ -9,6 +9,7 @@ type Part = { x: number; y: number; vx: number; vy: number; s: number; life: num
 type Cloud = { x: number; y: number; r: number; vr: number; vx: number; vy: number; life: number; age: number };
 type Ring = { x: number; r: number; life: number; age: number };
 
+const GHOST_OPACITY = "0.2";
 const SAND = ["#e6cfa3", "#cfae7c", "#b08f62", "#8d7250", "#f3e3bf"];
 const rnd = (a: number, b: number) => a + Math.random() * (b - a);
 const lerpCol = (t: number) => {
@@ -19,7 +20,7 @@ const lerpCol = (t: number) => {
 
 export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string }) {
   const pathname = usePathname();
-  if (pathname !== "/") return null;
+  const isHome = pathname === "/";
 
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -29,6 +30,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
   const initialState = useRef(state);
 
   useEffect(() => {
+    if (!isHome) return;
     const wrap = wrapRef.current;
     const cv = canvasRef.current;
     const ctx = cv?.getContext("2d");
@@ -95,9 +97,10 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     };
     const crater = (l: Letter) => {
       if (!gctx) return;
+      const rx = Math.max(0.1, Math.abs(l.w) * 0.75);
       gctx.fillStyle = "rgba(0,0,0,.32)";
       gctx.beginPath();
-      gctx.ellipse(l.x, 4, l.w * 0.75, 9, 0, 0, 7);
+      gctx.ellipse(l.x, 4, rx, 9, 0, 0, 7);
       gctx.fill();
       gctx.strokeStyle = "rgba(0,0,0,.35)";
       gctx.lineWidth = 1;
@@ -105,11 +108,12 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         gctx.beginPath();
         let x = l.x, y = 3;
         gctx.moveTo(x, y);
-        for (let s = 0; s < 4; s++) { x += rnd(-1, 1) * l.w * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
+        for (let s = 0; s < 4; s++) { x += rnd(-1, 1) * Math.abs(l.w) * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
         gctx.stroke();
       }
     };
-    const settle = () => {
+    const maskImg = "linear-gradient(to bottom, black calc(100% - 120px), transparent)";
+    const place = () => {
       settled = true;
       wrap.style.display = "block";
       wrap.style.position = "absolute";
@@ -118,22 +122,38 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       wrap.style.right = "auto";
       wrap.style.bottom = "auto";
       wrap.style.width = "100%";
+      wrap.style.height = CH + "px";
       wrap.style.zIndex = "0";
       wrap.style.pointerEvents = "none";
-      wrap.style.opacity = "1";
+      wrap.style.willChange = "opacity";
+      wrap.style.filter = "none";
+      wrap.style.setProperty("mask-image", maskImg);
+      wrap.style.setProperty("-webkit-mask-image", maskImg);
+    };
+    const settle = () => {
+      cancelAnimationFrame(raf);
+      settled = true;
       layout();
-      wrap.style.height = CH + "px";
-      const mask = "linear-gradient(to bottom, black calc(100% - 120px), transparent)";
-      wrap.style.setProperty("mask-image", mask);
-      wrap.style.setProperty("-webkit-mask-image", mask);
+      place();
+      wrap.style.transition = "none";
+      wrap.style.opacity = GHOST_OPACITY;
       letters.forEach((l) => { l.y = gy; l.state = 2; l.sy = 1; l.r0 = 0; crater(l); });
       parts = []; rings = []; clouds = []; shake = 0; flash = 0;
       draw();
     };
+    const skip = () => {
+      if (settled) return;
+      settle();
+      document.documentElement.classList.remove("cinematic-lock");
+    };
     const handover = () => {
       if (settled) return;
-      cancelAnimationFrame(raf);
-      settle();
+      place();
+      wrap.style.transition = "none";
+      wrap.style.opacity = "1";
+      void wrap.offsetWidth;
+      wrap.style.transition = "opacity 3s cubic-bezier(0.45, 0, 0.2, 1) 0.4s";
+      wrap.style.opacity = GHOST_OPACITY;
       document.documentElement.classList.remove("cinematic-lock");
     };
     const impact = (l: Letter) => {
@@ -186,19 +206,22 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         ctx.restore();
       }
       for (const c of clouds) {
-        const a = 1 - c.age / c.life, g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.r);
+        const cr = Math.max(0.1, c.r);
+        const a = 1 - c.age / c.life, g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, cr);
         g.addColorStop(0, "rgba(214,188,148," + 0.3 * a + ")");
         g.addColorStop(1, "rgba(214,188,148,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(c.x, c.y, c.r, 0, 7);
+        ctx.arc(c.x, c.y, cr, 0, 7);
         ctx.fill();
       }
       for (const r of rings) {
+        const rx = Math.max(0.1, Math.abs(r.r));
+        const ry = Math.max(0.1, Math.abs(r.r * 0.16));
         ctx.strokeStyle = "rgba(243,227,191," + 0.55 * (1 - r.age / r.life) + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.ellipse(r.x, gy + 2, r.r, r.r * 0.16, 0, 0, 7);
+        ctx.ellipse(r.x, gy + 2, rx, ry, 0, 0, 7);
         ctx.stroke();
       }
       for (const p of parts) {
@@ -246,6 +269,8 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     };
     const play = () => {
       wrap.style.display = "block";
+      wrap.style.transition = "none";
+      wrap.style.filter = "none";
       wrap.style.opacity = "1";
       wrap.style.pointerEvents = "auto";
       document.documentElement.classList.add("cinematic-lock");
@@ -256,18 +281,18 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       t0 = last = performance.now();
       raf = requestAnimationFrame(tick);
     };
-    api.current = { play, skip: handover, settle };
+    api.current = { play, skip, settle };
 
     const css = getComputedStyle(document.body).getPropertyValue("--font-display").trim();
     if (css) family = css + ", Impact, sans-serif";
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !settled && wrap.style.display === "block") handover();
+      if (e.key === "Escape" && !settled && wrap.style.display === "block") skip();
     };
     window.addEventListener("keydown", onKey);
     let rt = 0;
     const ro = new ResizeObserver(() => {
       clearTimeout(rt);
-      rt = window.setTimeout(() => { if (settled) settle(); }, 150);
+      rt = window.setTimeout(() => { if (settled && (Math.abs(wrap.clientWidth - W) > 2 || window.innerHeight !== H)) settle(); }, 150);
     });
     ro.observe(document.body);
     return () => {
@@ -279,9 +304,10 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       document.documentElement.classList.remove("cinematic-lock");
       api.current = null;
     };
-  }, [name]);
+  }, [name, isHome]);
 
   useEffect(() => {
+    if (!isHome) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce || initialState.current === "done") {
       const id = requestAnimationFrame(() => api.current?.settle());
@@ -290,7 +316,9 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     }
     if (!started) return;
     api.current?.play();
-  }, [started]);
+  }, [started, isHome]);
+
+  if (!isHome) return null;
 
   return (
     <div ref={wrapRef} data-lenis-prevent style={{ display: "none" }} className="fixed inset-0 z-[200] overflow-hidden bg-[#08080d]">
