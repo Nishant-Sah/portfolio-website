@@ -123,7 +123,6 @@ export default function PhotoFloat({
                 width={site.photoSize.width}
                 height={site.photoSize.height}
                 priority={priority}
-                loading="eager"
                 sizes="(max-width: 768px) 70vw, 340px"
                 className="h-full w-full object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)]"
               />

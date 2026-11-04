@@ -95,10 +95,9 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     };
     const crater = (l: Letter) => {
       if (!gctx) return;
-      const rx = Math.max(0.1, Math.abs(l.w) * 0.75);
       gctx.fillStyle = "rgba(0,0,0,.32)";
       gctx.beginPath();
-      gctx.ellipse(l.x, 4, rx, 9, 0, 0, 7);
+      gctx.ellipse(l.x, 4, l.w * 0.75, 9, 0, 0, 7);
       gctx.fill();
       gctx.strokeStyle = "rgba(0,0,0,.35)";
       gctx.lineWidth = 1;
@@ -106,7 +105,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         gctx.beginPath();
         let x = l.x, y = 3;
         gctx.moveTo(x, y);
-        for (let st = 0; st < 4; st++) { x += rnd(-1, 1) * Math.abs(l.w) * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
+        for (let s = 0; s < 4; s++) { x += rnd(-1, 1) * l.w * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
         gctx.stroke();
       }
     };
@@ -199,9 +198,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         ctx.strokeStyle = "rgba(243,227,191," + 0.55 * (1 - r.age / r.life) + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
-        const rx = Math.max(0.1, Math.abs(r.r));
-        const ry = Math.max(0.1, Math.abs(r.r * 0.16));
-        ctx.ellipse(r.x, gy + 2, rx, ry, 0, 0, 7);
+        ctx.ellipse(r.x, gy + 2, r.r, r.r * 0.16, 0, 0, 7);
         ctx.stroke();
       }
       for (const p of parts) {
