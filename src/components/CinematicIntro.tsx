@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
 import { useHeroIntro } from "@/context/HeroIntroContext";
 
 type Letter = { ch: string; x: number; w: number; y: number; y0: number; vy: number; r0: number; state: 0 | 1 | 2; ts: number; sy: number; delay: number; col: string };
@@ -19,9 +18,6 @@ const lerpCol = (t: number) => {
 };
 
 export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string }) {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const api = useRef<{ play: () => void; skip: () => void; settle: () => void } | null>(null);
@@ -30,7 +26,6 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
   const initialState = useRef(state);
 
   useEffect(() => {
-    if (!isHome) return;
     const wrap = wrapRef.current;
     const cv = canvasRef.current;
     const ctx = cv?.getContext("2d");
@@ -97,10 +92,9 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     };
     const crater = (l: Letter) => {
       if (!gctx) return;
-      const rx = Math.max(0.1, Math.abs(l.w) * 0.75);
       gctx.fillStyle = "rgba(0,0,0,.32)";
       gctx.beginPath();
-      gctx.ellipse(l.x, 4, rx, 9, 0, 0, 7);
+      gctx.ellipse(l.x, 4, l.w * 0.75, 9, 0, 0, 7);
       gctx.fill();
       gctx.strokeStyle = "rgba(0,0,0,.35)";
       gctx.lineWidth = 1;
@@ -108,7 +102,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         gctx.beginPath();
         let x = l.x, y = 3;
         gctx.moveTo(x, y);
-        for (let s = 0; s < 4; s++) { x += rnd(-1, 1) * Math.abs(l.w) * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
+        for (let s = 0; s < 4; s++) { x += rnd(-1, 1) * l.w * 0.35; y += rnd(3, 10); gctx.lineTo(x, y); }
         gctx.stroke();
       }
     };
@@ -206,22 +200,19 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
         ctx.restore();
       }
       for (const c of clouds) {
-        const cr = Math.max(0.1, c.r);
-        const a = 1 - c.age / c.life, g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, cr);
+        const a = 1 - c.age / c.life, g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.r);
         g.addColorStop(0, "rgba(214,188,148," + 0.3 * a + ")");
         g.addColorStop(1, "rgba(214,188,148,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(c.x, c.y, cr, 0, 7);
+        ctx.arc(c.x, c.y, c.r, 0, 7);
         ctx.fill();
       }
       for (const r of rings) {
-        const rx = Math.max(0.1, Math.abs(r.r));
-        const ry = Math.max(0.1, Math.abs(r.r * 0.16));
         ctx.strokeStyle = "rgba(243,227,191," + 0.55 * (1 - r.age / r.life) + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.ellipse(r.x, gy + 2, rx, ry, 0, 0, 7);
+        ctx.ellipse(r.x, gy + 2, r.r, r.r * 0.16, 0, 0, 7);
         ctx.stroke();
       }
       for (const p of parts) {
@@ -304,10 +295,9 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       document.documentElement.classList.remove("cinematic-lock");
       api.current = null;
     };
-  }, [name, isHome]);
+  }, [name]);
 
   useEffect(() => {
-    if (!isHome) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce || initialState.current === "done") {
       const id = requestAnimationFrame(() => api.current?.settle());
@@ -316,9 +306,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
     }
     if (!started) return;
     api.current?.play();
-  }, [started, isHome]);
-
-  if (!isHome) return null;
+  }, [started]);
 
   return (
     <div ref={wrapRef} data-lenis-prevent style={{ display: "none" }} className="fixed inset-0 z-[200] overflow-hidden bg-[#08080d]">
