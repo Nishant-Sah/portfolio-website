@@ -53,7 +53,7 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main"
-        className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-3.5"
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-2 sm:py-2.5"
       >
         {/* Brand logo linked to top */}
         <Link
