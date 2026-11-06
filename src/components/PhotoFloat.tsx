@@ -137,7 +137,7 @@ export default function PhotoFloat({
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.88 }}
                     transition={{ type: "spring", stiffness: 350, damping: 22 }}
-                    className="pointer-events-none absolute -top-5 left-1/2 z-40 max-w-[90vw] -translate-x-1/2 whitespace-nowrap rounded-full border border-pink-400/60 bg-[#19112e]/95 px-4 py-2 text-xs font-bold text-pink-200 shadow-[0_0_24px_rgba(244,114,182,0.45)] backdrop-blur-md"
+                    className="pointer-events-none absolute top-2 sm:top-3 left-1/2 z-50 max-w-[90vw] -translate-x-1/2 whitespace-nowrap rounded-full border border-pink-400/60 bg-[#19112e]/95 px-4 py-2 text-xs font-bold text-pink-200 shadow-[0_0_24px_rgba(244,114,182,0.45)] backdrop-blur-md"
                   >
                     <span className="flex items-center gap-2">
                       <Gamepad2 size={15} className="shrink-0 animate-bounce text-pink-400" />
