@@ -172,7 +172,7 @@ export default function RatGame({ isOpen, onClose }: { isOpen: boolean; onClose:
       `}</style>
 
       {/* Top Game Banner */}
-      <div className="pointer-events-auto fixed top-3 inset-x-0 mx-auto max-w-md px-3">
+      <div className="pointer-events-auto fixed top-14 sm:top-16 inset-x-0 mx-auto max-w-md px-3 z-50">
         <div className="glass flex items-center justify-between gap-3 rounded-2xl border border-violet-400/40 bg-[#121216]/95 p-3 shadow-2xl backdrop-blur-md">
           <div className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-pink-500/20 text-pink-300 text-lg">
@@ -378,7 +378,7 @@ export default function RatGame({ isOpen, onClose }: { isOpen: boolean; onClose:
       </div>
 
       {/* Floating Bottom Quick Exit Button */}
-      <div className="pointer-events-auto fixed bottom-5 inset-x-0 mx-auto w-fit z-50">
+      <div className="pointer-events-auto fixed bottom-4 sm:bottom-6 inset-x-0 sm:inset-x-auto sm:right-6 mx-auto sm:mx-0 w-fit z-50">
         <button
           type="button"
           onClick={onClose}
