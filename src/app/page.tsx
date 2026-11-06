@@ -60,7 +60,7 @@ export default function Home() {
       <Navbar />
       <main id="main">
         {/* Hero Section */}
-        <section className="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-8 pt-[calc(3.5rem+0.75rem)] text-center md:pb-12 md:pt-[calc(4rem+1rem)]">
+        <section className="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-8 pt-2 sm:pt-3 text-center md:pb-8 md:pt-3">
           {/* ONE shared square wrapper: aspect-ratio 1/1, centered with mx-auto, relative */}
           <div
             id="hero-orb-wrapper"
