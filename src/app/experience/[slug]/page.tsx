@@ -111,14 +111,14 @@ export default async function ExperienceDetailPage({ params }: Props) {
 
         {/* Certificate Section if Available */}
         {item.certificate && (
-          <section className="mt-12 rounded-3xl border border-amber-500/40 bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent p-6 md:p-8 backdrop-blur shadow-[0_0_40px_rgba(245,158,11,0.1)]">
+          <section className="mt-12 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/15 via-emerald-500/5 to-transparent p-6 md:p-8 backdrop-blur shadow-[0_0_40px_rgba(34, 197, 94,0.1)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-[0_0_24px_rgba(245,158,11,0.3)]">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_24px_rgba(34, 197, 94,0.3)]">
                 <Award size={32} />
               </div>
               <div className="flex-1 space-y-1.5">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
                     Official Certificate & Honors
                   </span>
                   {item.certificate.date && (
@@ -129,7 +129,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                   {item.certificate.title}
                 </h3>
                 {item.certificate.award && (
-                  <p className="text-base font-semibold text-amber-300">
+                  <p className="text-base font-semibold text-emerald-300">
                     🏆 {item.certificate.award}
                   </p>
                 )}
@@ -137,7 +137,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                   Issuing Authority: <span className="text-zinc-200 font-medium">{item.certificate.issuer}</span>
                 </p>
                 {item.certificate.verificationNote && (
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-300 italic border-l-2 border-amber-500/50 pl-3">
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-300 italic border-l-2 border-emerald-500/50 pl-3">
                     &ldquo;{item.certificate.verificationNote}&rdquo;
                   </p>
                 )}
@@ -146,9 +146,9 @@ export default async function ExperienceDetailPage({ params }: Props) {
 
             {/* Certificate Image Showcase */}
             {item.certificate.image && (
-              <div className="mt-6 pt-6 border-t border-amber-500/20">
+              <div className="mt-6 pt-6 border-t border-emerald-500/20">
                 <div className="grid gap-6 md:grid-cols-2 items-start">
-                  <div className="group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-black/60 shadow-2xl transition hover:border-amber-400">
+                  <div className="group relative overflow-hidden rounded-2xl border border-emerald-500/30 bg-black/60 shadow-2xl transition hover:border-emerald-400">
                     <a
                       href={item.certificate.image}
                       target="_blank"
@@ -162,7 +162,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                         className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
-                        <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                        <span className="text-xs font-semibold text-emerald-300 flex items-center gap-1.5">
                           <ExternalLink size={14} /> Open Original Certificate
                         </span>
                       </div>
@@ -170,7 +170,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                   </div>
 
                   {item.certificate.secondaryImage ? (
-                    <div className="group relative overflow-hidden rounded-2xl border border-amber-500/30 bg-black/60 shadow-2xl transition hover:border-amber-400">
+                    <div className="group relative overflow-hidden rounded-2xl border border-emerald-500/30 bg-black/60 shadow-2xl transition hover:border-emerald-400">
                       <a
                         href={item.certificate.secondaryImage}
                         target="_blank"
@@ -184,7 +184,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                           className="h-full w-full object-contain p-2 transition duration-500 group-hover:scale-[1.02]"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
-                          <span className="text-xs font-semibold text-amber-300 flex items-center gap-1.5">
+                          <span className="text-xs font-semibold text-emerald-300 flex items-center gap-1.5">
                             <ExternalLink size={14} /> {item.certificate.secondaryTitle || "Open Workshop Certificate"}
                           </span>
                         </div>
@@ -192,7 +192,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                     </div>
                   ) : (
                     <div className="space-y-4 rounded-2xl border border-white/5 bg-white/[0.03] p-5">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-amber-300 flex items-center gap-2">
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-emerald-300 flex items-center gap-2">
                         <Award size={16} /> Credential Verification
                       </h4>
                       <p className="text-xs leading-relaxed text-zinc-300">
@@ -202,7 +202,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
                         href={item.certificate.image}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-xl bg-amber-500/20 px-4 py-2 text-xs font-semibold text-amber-200 border border-amber-500/40 hover:bg-amber-500/30 transition"
+                        className="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-xs font-semibold text-emerald-200 border border-emerald-500/40 hover:bg-emerald-500/30 transition"
                       >
                         <ExternalLink size={13} /> View Full Resolution
                       </a>
