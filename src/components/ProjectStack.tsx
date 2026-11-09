@@ -109,7 +109,7 @@ export default function ProjectStack({ id, title, intro, projects }: Props) {
   const smooth = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.6 });
 
   return (
-    <section id={id} className="mx-auto max-w-6xl px-6 py-10 md:py-14" style={{ "--stack-accent": "#f5c542" } as React.CSSProperties}>
+    <section id={id} className="mx-auto max-w-6xl px-6 py-10 md:py-14" style={{ "--stack-accent": "#22c55e" } as React.CSSProperties}>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-w-3xl">
           <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>

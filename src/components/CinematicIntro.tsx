@@ -9,7 +9,7 @@ type Part = { x: number; y: number; vx: number; vy: number; s: number; life: num
 type Cloud = { x: number; y: number; r: number; vr: number; vx: number; vy: number; life: number; age: number };
 type Ring = { x: number; r: number; life: number; age: number };
 
-const SAND = ["#e6cfa3", "#cfae7c", "#b08f62", "#8d7250", "#f3e3bf"];
+const SAND = ["#86efac", "#4ade80", "#22c55e", "#16a34a", "#bbf7d0"];
 const rnd = (a: number, b: number) => a + Math.random() * (b - a);
 const lerpCol = (t: number) => {
   const a = [129, 117, 255];
@@ -188,7 +188,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       ctx.fillStyle = hg;
       ctx.fillRect(0, 0, W, gy + 4);
       ctx.drawImage(ground, 0, gy, W, CH - gy);
-      ctx.fillStyle = "rgba(243,227,191,.35)";
+      ctx.fillStyle = "rgba(74,222,128,.35)";
       ctx.fillRect(0, gy, W, 1);
       ctx.restore();
 
@@ -215,8 +215,8 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       for (const c of clouds) {
         const cr = Math.max(0.1, c.r);
         const a = 1 - c.age / c.life, g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, cr);
-        g.addColorStop(0, "rgba(214,188,148," + 0.3 * a + ")");
-        g.addColorStop(1, "rgba(214,188,148,0)");
+        g.addColorStop(0, "rgba(74,222,128," + 0.3 * a + ")");
+        g.addColorStop(1, "rgba(74,222,128,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(c.x, c.y, cr, 0, 7);
@@ -225,7 +225,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       for (const r of rings) {
         const rx = Math.max(0.1, Math.abs(r.r));
         const ry = Math.max(0.1, Math.abs(r.r * 0.16));
-        ctx.strokeStyle = "rgba(243,227,191," + 0.55 * (1 - r.age / r.life) + ")";
+        ctx.strokeStyle = "rgba(134,239,172," + 0.55 * (1 - r.age / r.life) + ")";
         ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.ellipse(r.x, gy + 2, rx, ry, 0, 0, 7);
@@ -239,7 +239,7 @@ export default function CinematicIntro({ name = "Nishant Sah" }: { name?: string
       }
       ctx.globalAlpha = 1;
       ctx.restore();
-      if (flash > 0.01) { ctx.fillStyle = "rgba(255,240,215," + flash * 0.3 + ")"; ctx.fillRect(0, 0, W, CH); }
+      if (flash > 0.01) { ctx.fillStyle = "rgba(187,247,208," + flash * 0.3 + ")"; ctx.fillRect(0, 0, W, CH); }
     };
     const tick = (now: number) => {
       const dt = Math.min((now - last) / 1000, 0.033), t = (now - t0) / 1000, G = H * 3.2;

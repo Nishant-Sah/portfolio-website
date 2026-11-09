@@ -81,7 +81,7 @@ export default function ResumeButton({ className, variant = "hero" }: Props) {
 
         {showNotice && (
           <div className="absolute right-0 top-full mt-2 z-50 w-64 rounded-2xl border border-white/15 bg-[#17171d] p-3 text-left shadow-2xl shadow-black/80 backdrop-blur-xl animate-in fade-in slide-in-from-top-1">
-            <div className="flex items-center gap-2 text-xs font-semibold text-amber-300">
+            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-300">
               <Clock size={13} /> Resume Coming Soon
             </div>
             <p className="mt-1 text-[11px] leading-relaxed text-zinc-300">
@@ -105,7 +105,7 @@ export default function ResumeButton({ className, variant = "hero" }: Props) {
         </button>
         {showNotice && (
           <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-60 rounded-xl border border-white/15 bg-[#17171d] p-2.5 text-center text-xs text-zinc-200 shadow-xl">
-            <span className="font-semibold text-amber-300">Resume updating soon.</span> Reach out via email anytime!
+            <span className="font-semibold text-emerald-300">Resume updating soon.</span> Reach out via email anytime!
           </div>
         )}
       </span>
@@ -123,8 +123,8 @@ export default function ResumeButton({ className, variant = "hero" }: Props) {
       </button>
 
       {showNotice && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2.5 z-50 w-72 rounded-2xl border border-amber-500/30 bg-[#16161c]/95 p-3.5 text-center shadow-2xl shadow-black/90 backdrop-blur-md animate-in fade-in slide-in-from-top-2">
-          <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-amber-300">
+        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2.5 z-50 w-72 rounded-2xl border border-emerald-500/30 bg-[#16161c]/95 p-3.5 text-center shadow-2xl shadow-black/90 backdrop-blur-md animate-in fade-in slide-in-from-top-2">
+          <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-emerald-300">
             <Clock size={14} /> Resume Upload in Progress
           </div>
           <p className="mt-1.5 text-xs leading-relaxed text-zinc-300">
