@@ -111,9 +111,9 @@ export default async function ExperienceDetailPage({ params }: Props) {
 
         {/* Certificate Section if Available */}
         {item.certificate && (
-          <section className="mt-12 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/15 via-emerald-500/5 to-transparent p-6 md:p-8 backdrop-blur shadow-[0_0_40px_rgba(34, 197, 94,0.1)]">
+          <section className="mt-12 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/15 via-emerald-500/5 to-transparent p-6 md:p-8 backdrop-blur shadow-[0_0_40px_rgba(16, 185, 129,0.1)]">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_24px_rgba(34, 197, 94,0.3)]">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_24px_rgba(16, 185, 129,0.3)]">
                 <Award size={32} />
               </div>
               <div className="flex-1 space-y-1.5">

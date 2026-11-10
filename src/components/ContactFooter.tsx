@@ -11,7 +11,7 @@ const socials = [{ label: "LinkedIn", href: site.linkedin }, ...(site.github ? [
 
 export default function ContactFooter() {
   return (
-    <footer className="relative isolate overflow-hidden bg-black pt-14" style={{ "--glow": "34 197 94" } as React.CSSProperties}>
+    <footer className="relative isolate overflow-hidden bg-black pt-14" style={{ "--glow": "16 185 129" } as React.CSSProperties}>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[75%]"

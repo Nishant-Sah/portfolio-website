@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         {project.certificate && (
           <section className="mt-12 rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 via-emerald-500/5 to-transparent p-6 md:p-8 backdrop-blur">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_24px_rgba(34, 197, 94,0.25)]">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-[0_0_24px_rgba(16, 185, 129,0.25)]">
                 <Award size={28} />
               </div>
               <div className="flex-1 space-y-1">
