@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Chakra_Petch, JetBrains_Mono } from "next/font/google";
 import { site } from "@/data/site";
+import { OG_IMAGE, siteUrl } from "@/lib/seo";
 import { HeroIntroProvider } from "@/context/HeroIntroContext";
 import FloatingBadge from "@/components/FloatingBadge";
 import ScrollAvatar from "@/components/ScrollAvatar";
@@ -16,18 +17,25 @@ const mono = JetBrains_Mono({ subsets: ["latin"], display: "swap", variable: "--
 
 const description = `${site.name} is a ${site.role.toLowerCase()} at ${site.university} building robotics, IoT and web projects.`;
 
+const pageTitle = `${site.name} | ${site.role}`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: { default: `${site.name} | ${site.role}`, template: `%s | ${site.name}` },
+  metadataBase: new URL(siteUrl),
+  title: { default: pageTitle, template: `%s | ${site.name}` },
   description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: `${site.name} | ${site.role}`,
-    description,
-    url: "/",
-    siteName: site.name,
-    type: "website",
-    images: [{ url: site.photo, width: site.photoSize.width, height: site.photoSize.height, alt: site.name }],
+  applicationName: site.name,
+  authors: [{ name: site.name, url: siteUrl }],
+  creator: site.name,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  openGraph: { title: pageTitle, description, url: "/", siteName: site.name, type: "website", locale: "en_US", images: [OG_IMAGE] },
+  twitter: { card: "summary_large_image", title: pageTitle, description, images: [OG_IMAGE.url] },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || undefined,
+    other: process.env.BING_SITE_VERIFICATION ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION } : undefined,
   },
 };
 
