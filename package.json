@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "prebuild": "node scripts/check-seo-env.mjs",
+    "seo:check": "node scripts/seo-check.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
