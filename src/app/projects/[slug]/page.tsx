@@ -17,6 +17,8 @@ import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { OG_IMAGE, clip, projectGraph } from "@/lib/seo";
 
 function GithubIcon({ size = 16 }: { size?: number }) {
   return (
@@ -39,11 +41,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  if (!project) return { title: "Project Not Found" };
+  if (!project) return { title: "Project Not Found", robots: { index: false } };
+  const path = `/projects/${slug}`;
+  const desc = clip(project.description);
 
   return {
-    title: `${project.title} | ${site.name}`,
-    description: project.description,
+    title: project.title,
+    description: desc,
+    alternates: { canonical: path },
+    openGraph: { type: "article", title: project.title, description: desc, url: path, siteName: site.name, locale: "en_US", images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title: project.title, description: desc, images: [OG_IMAGE.url] },
   };
 }
 
@@ -61,6 +68,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#121216] text-[#f4f4f7]">
+      <JsonLd data={projectGraph(project)} />
       <Navbar />
 
       <main className="mx-auto max-w-5xl px-6 py-10 md:py-16">

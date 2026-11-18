@@ -18,6 +18,8 @@ import { experienceData } from "@/data/experience";
 import { site } from "@/data/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { OG_IMAGE, clip, experienceGraph } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -32,11 +34,16 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = experienceData.find((e) => e.slug === slug);
-  if (!item) return { title: "Experience Not Found" };
+  if (!item) return { title: "Experience Not Found", robots: { index: false } };
+  const path = `/experience/${slug}`;
+  const desc = clip(item.summary);
 
   return {
-    title: `${item.title} | ${site.name}`,
-    description: item.summary,
+    title: item.title,
+    description: desc,
+    alternates: { canonical: path },
+    openGraph: { type: "article", title: item.title, description: desc, url: path, siteName: site.name, locale: "en_US", images: [OG_IMAGE] },
+    twitter: { card: "summary_large_image", title: item.title, description: desc, images: [OG_IMAGE.url] },
   };
 }
 
@@ -54,6 +61,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#121216] text-[#f4f4f7]">
+      <JsonLd data={experienceGraph(item)} />
       <Navbar />
 
       <main className="mx-auto max-w-5xl px-6 py-10 md:py-16">
