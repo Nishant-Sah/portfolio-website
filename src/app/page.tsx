@@ -20,6 +20,7 @@ import { projects } from "@/data/projects";
 import { skillGroups } from "@/data/skills";
 import { experienceData } from "@/data/experience";
 import { useHeroIntro } from "@/context/HeroIntroContext";
+import HomeSeo from "@/components/HomeSeo";
 
 // Defined at module level so server and client evaluate the exact same reference
 const MINI_SLUGS = new Set([
@@ -57,6 +58,7 @@ export default function Home() {
 
   return (
     <div id="top" className="min-h-screen overflow-x-clip">
+      <HomeSeo />
       <Navbar />
       <main id="main">
         {/* Hero Section */}
